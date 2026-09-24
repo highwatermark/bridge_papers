@@ -1,9 +1,9 @@
 ---
 title: "Nominating computational correspondences across disconnected literatures: a three-space detector that does not beat its nulls, and one adjudicated case"
 status: "Draft v2 — Paper B. Not submission-ready; see submission_checklist.md"
-authors: "[AUTHOR NAMES — TO FILL]"
-affiliations: "[AFFILIATIONS — TO FILL]"
-corresponding: "[CORRESPONDING AUTHOR + EMAIL — TO FILL]"
+authors: "Hari Lakshmanan"
+affiliations: "Independent researcher (no institutional affiliation)"
+corresponding: "Hari Lakshmanan <hariase@gmail.com>"
 ---
 
 ## Abstract
@@ -193,11 +193,17 @@ A three-space detector built from a fixed role lexicon, sentence embeddings and 
 
 ## Data and code availability
 
-Frozen corpus (`combined_text.csv`), embeddings (`concept_embeddings.npy`), reference lists (`refset_v2.json`), specification (`detector_spec.json`, `detector.py`, `role_lexicon.tsv`), all pair scores (`pair_scores.csv.gz`), null draws, the sensitivity grid, benchmark results and the blind annotation kit accompany this manuscript. **Repository URL: [TO FILL — deposit on Zenodo/OSF before submission].**
+Frozen corpus (`combined_text.csv`), embeddings (`concept_embeddings.npy`), reference lists (`refset_v2.json`), specification (`detector_spec.json`, `detector.py`, `role_lexicon.tsv`), all pair scores (`pair_scores.csv.gz`), null draws, the sensitivity grid, benchmark results and the blind annotation kit accompany this manuscript. **Repository:** https://github.com/highwatermark/bridge_papers (the rater key is withheld until labelling is complete; its SHA-256 is in the README). An archival DOI (Zenodo release of a tagged version) is to be minted before submission.
 
 ## Funding, competing interests, author contributions
 
-[TO FILL]
+**Funding.** This work received no external funding.
+
+**Competing interests.** The author declares no competing interests.
+
+**Author contributions.** Hari Lakshmanan is the sole author: conceptualisation, methodology, analysis, writing and review. AI-assisted tooling was used for literature retrieval, code and drafting; all claims, numbers and references were checked against the computed artifacts and verified bibliographic records, and responsibility for the content rests with the author.
+
+**Correspondence.** hariase@gmail.com
 
 ## References
 

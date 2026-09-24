@@ -1,0 +1,67 @@
+{
+  "version": 3,
+  "created_at": "2026-09-24T00:27:36.544Z",
+  "task_summary": "Fill G1–G9 gaps and assemble one Paper-B manuscript with appendices",
+  "agents": [],
+  "phases": [
+    {
+      "name": "Plan",
+      "delegations": [
+        {
+          "steps": [
+            {
+              "title": "Rebuild detector from recovered spec, reproduce headline numbers",
+              "description": "Recover the 10 OpenAlex evolution-ML queries, the 8 harness queries, date window, type filter, off-topic blocklists, paradigm keyword rules and the harness rule (env≥1 AND transition≥1 AND modeling≥2, abstract>120 chars) verbatim from the archive. Re-fetch referenced_works for all 522 papers via OpenAlex with the API key. Recompute signatures with the original lexicon (distinct-term substring presence), the ≥4-role richness gate, sqrt→L2→cosine primitive similarity, all-MiniLM-L6-v2 concept cosine, and reference Jaccard. Check each published number (9585 pairs, 0.71/0.26/0.0002, 1.9% share-any-ref, ρ=0.02, 627/6.5%, 850/8.9%, 96 seeds, 716 dark bridges) and write reproducibility_log.csv marking each REPRODUCED / CHANGED (with new value) / UNVERIFIED. Save detector_spec.json, role_lexicon.tsv, pair_scores.parquet (all rich cross-pairs with the three scores)."
+            },
+            {
+              "title": "Compute null models and baselines (G2)",
+              "description": "(1) Within-literature vs cross-literature primitive similarity distributions. (2) Vocabulary-shuffle null: randomly reassign lexicon terms across the six roles, keeping per-role term counts, 200 permutations, recompute the hidden-bridge rate. (3) Role-permutation null: permute role labels on the harness side, 200 permutations. (4) Year-matched (±2 y) and venue-matched subsets. Report observed rate vs null mean, 95% interval and empirical p. Save nulls_summary.csv and a null-distribution figure."
+            },
+            {
+              "title": "Sensitivity table and pre-registered quadrant definition",
+              "description": "Define 'high/low' two ways: (a) pre-registered quantiles (primitive ≥ 75th pct, concept ≤ 25th pct, Jaccard = 0) and (b) the original arbitrary cut (prim ≥ 0.90, concept < 90th pct), labelled as arbitrary. Compute the hidden-bridge and false-friend percentages over a grid of τ_prim × τ_concept × τ_jaccard cuts. Save sensitivity_table.csv. Render the primitive × concept scatter (figure-style) with Ding–Fard starred, the three false friends marked, and threshold lines for both definitions."
+            },
+            {
+              "title": "Negative controls as evidence (G4) and fair Table 1 (G5)",
+              "description": "Recompute false friends with the original lexicon and reconcile against the two earlier control sets, which disagree (Bridge-2 packet vs skill smoke test). For each of the three final controls: OpenAlex IDs, titles, a one-sentence topic, the mismatched roles, and why the six-slot table cannot be filled without stretching. I will read both abstracts for each, and label this as author inspection, not the rater study. Rewrite Table 1 with a 'true component or re-description?' column, publicly flag the weak T and F slots, and state a rejection rule for what counts as an empty slot. Save false_friends_evidence.csv and table1_fair.md."
+            },
+            {
+              "title": "Benchmark honesty upgrade (G6)",
+              "description": "Keep the GP vs Hopfield comparison and add: the ground-truth formula; a one-line proof that a quadratic form has a single stationary point, so it cannot hold four interior basins; a sufficient-capacity baseline that is not a GP (RBF interpolation and a two-layer MLP potential, both fit to the same data); an explicit sign-alignment protocol. Report Spearman correlation and basin count for all four fields. Re-render the figure labelled 'capacity test, not biological validation'. Save benchmark_results.csv."
+            },
+            {
+              "title": "Related work with verified references (G8)",
+              "description": "Resolve 12–18 additional references against OpenAlex (key-authenticated) across five buckets: literature-based discovery (Swanson ABC), analogical retrieval and structure-mapping (Gentner), fitness-landscape inference beyond Ding (DeepSequence, EVE, ESM), landscape and velocity quantification beyond Fard (RNA velocity, scVelo, dynamo, PRESCIENT, Waddington-OT), and energy-based models vs Hopfield/Lyapunov. Anything that does not resolve is marked CHECK or dropped, never fabricated. Target 22–30 total. Save references_v2.bib and bibliography_check_v2.csv."
+            },
+            {
+              "title": "Precision-study kit (G3) and Eq. 9 protocol (G7)",
+              "description": "Generate the actual stratified, seeded N=150 sample (50 hidden-bridge / 50 false-friend / 50 low-low) as a blind rater sheet with titles and abstracts, quadrant hidden. Write the one-page codebook, a κ target of ≥0.6, adjudication rules, and the precision definition, and state that recall is unmeasured. Write the Eq. 9 protocol: model family (GP / neural potential / ICNN), held-out splits, three success metrics including attractor set-matching, and the killing negative result. Candidate datasets are named only where verified; otherwise search criteria marked TO-LOOK-UP. No numbers for this experiment."
+            },
+            {
+              "title": "Assemble manuscript, appendices, talk track",
+              "description": "Produce, in order: A. a one-page diff vs the current drafts (added / killed / still UNVERIFIED); B. the assembled 4–6k-word manuscript in markdown with LaTeX equations, a methods box, and a 'what this paper does not do' box, 150-word abstract with the Level-2/3 distinction in sentence 2; C–F. Appendices 1–4 (full lexicons, 20–40 lines of detector pseudocode, codebook, Eq. 9 protocol). Following your assessment, Variant A's close reading becomes an adjudication appendix, and Variant C becomes a separate companion talk track (speaker notes, ~10 min). G. A submission checklist of remaining human/compute work. Also: data/code availability paragraph and a three-venue paragraph. Enforce the style bans by grep before saving: no 'same algorithm', and no unverified number without its label."
+            },
+            {
+              "title": "Package into the local folder",
+              "description": "Update copy_papers.sh so one run places the manuscript, appendices, talk track, figures, bib, lexicon TSV, pair-score table, null/sensitivity CSVs, rater sheet and reproducibility log into ~/Cursor/bridge2_papers (under a v2/ subfolder, leaving the earlier drafts intact). Dry-run it and save."
+            }
+          ]
+        }
+      ],
+      "id": "phase-0"
+    }
+  ],
+  "desired_outputs": [
+    "manuscript_v2.md — one assembled Paper-B manuscript (4–6k words)",
+    "diff_vs_drafts.md, submission_checklist.md, talk_track_C.md",
+    "Appendices 1–4 (lexicons, pseudocode, codebook, Eq. 9 protocol)",
+    "reproducibility_log.csv, nulls_summary.csv, sensitivity_table.csv, benchmark_results.csv",
+    "role_lexicon.tsv, pair_scores.parquet, false_friends_evidence.csv, rater_sample_N150.csv",
+    "references_v2.bib (verified), updated figures (scatter, nulls, benchmark)",
+    "Updated copy_papers.sh"
+  ],
+  "feasibility": {
+    "rationale": "The original detector code (queries, classifier lists, six-role lexicon, richness gate, thresholds) is recoverable verbatim from the session archive, and an OpenAlex key is available to rebuild citation lists, so G1, G2, G4, G5, G6 and G8 can be computed rather than specified. G3 (N=150 human labels) and G7 (the Eq. 9 experiment) are protocols only; no results will be invented. One definitional error is already known: the published 6.5% hidden-bridge rate did not require zero citations.",
+    "confidence": "high"
+  }
+}

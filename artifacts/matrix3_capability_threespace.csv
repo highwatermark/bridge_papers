@@ -1,0 +1,8 @@
+capability,n_rich,primitive,concept,citation_frac,hidden_bridge
+Protein fold & function,5,0.675,0.235,0.018,0.663
+Regulatory control of expression,2,0.744,0.269,0.044,0.711
+Fitness-landscape navigation,23,0.699,0.304,0.024,0.682
+Generative evolvability,6,0.667,0.273,0.015,0.657
+Predictable adaptation,6,0.685,0.228,0.029,0.665
+Directed / accelerated search,16,0.64,0.26,0.015,0.63
+Ancestral program reconstruction,3,0.651,0.233,0.01,0.644

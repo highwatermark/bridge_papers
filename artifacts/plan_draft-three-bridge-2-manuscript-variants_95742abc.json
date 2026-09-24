@@ -1,0 +1,70 @@
+{
+  "version": 3,
+  "created_at": "2026-09-01T15:09:07.646Z",
+  "task_summary": "Draft three Bridge 2 manuscript variants, then publish four bridge-validation skills",
+  "agents": [],
+  "phases": [
+    {
+      "name": "Plan",
+      "delegations": [
+        {
+          "steps": [
+            {
+              "title": "Restore state, verify TeX toolchain",
+              "description": "Reload from artifacts (workspace was cleaned): bridge2_validation_packet.md, bridge2_model_facts.json, bridge2_synthetic.npz, false_friend_controls.csv, phase0_validated_bridges.csv, combined_text.csv and concept_embeddings.npy. Check for pdflatex/tectonic in the sandbox and record which PDF route is available, so the format decision is settled before drafting."
+            },
+            {
+              "title": "Build verified bibliography",
+              "description": "Assemble the reference list by fetching real metadata (title, authors, year, venue, DOI) from OpenAlex/Crossref for every work cited — Ding 2019, Taherian Fard & Ragan 2017, plus the Waddington/Huang/Hopfield lineage the two papers themselves cite. No reference goes in unless its metadata was retrieved. Deliverable: bridge2_references.bib and a bibliography check table."
+            },
+            {
+              "title": "Render paper figure set",
+              "description": "Produce publication-grade figures with figure-style: Figure 1 — the shared six-role formal template with both models mapped onto it side by side; Figure 2 — the synthetic double-well validation (ground truth / GP surface / Hopfield energy) re-rendered at paper spec; Figure 3 — the false-friend negative controls as a role-mismatch panel. Save each as an artifact."
+            },
+            {
+              "title": "Draft shared manuscript core",
+              "description": "Write the content shared by all three variants: abstract, the two extracted model definitions with real equations (ELBO, GP surface, Lyapunov energy E=-½PWPᵀ, Hopfield update), the shared formal template, the three-level equivalence adjudication, the synthetic-test results, failure modes, and the unification target. Saved as bridge2_core.md for reuse across variants."
+            },
+            {
+              "title": "Variant A — narrow translation paper",
+              "description": "Assemble the narrow, hardest-to-dismiss version: Bridge 2 only, controls as a short validation subsection, engine mentioned once in Discussion. Emit LaTeX with real equation environments and compile to PDF. Deliverables: bridge2_paperA_translation.tex + .pdf."
+            },
+            {
+              "title": "Variant B — translation plus method",
+              "description": "Extend Variant A with a full Methods section on the three-space bridge-discovery measure (primitive / concept / citation distance) that surfaced the pair, with the false-friend controls reframed as validation of the detector. Deliverables: bridge2_paperB_method.tex + .pdf."
+            },
+            {
+              "title": "Variant C — position paper",
+              "description": "Reframe Bridge 2 as the worked example inside the broader argument that disconnected literatures share a computational grammar, incorporating the corpus-level statistics (0.71 computation / 0.26 language / 0.0002 citation). Deliverables: bridge2_paperC_position.tex + .pdf."
+            },
+            {
+              "title": "HTML reading versions and comparison brief",
+              "description": "Build a self-contained single-file HTML reading version of each variant with base64-embedded figures (matching the existing review-panel pattern), plus variant_comparison.md laying the three side by side on framing, claim strength, referee risk, and what each sets up next — so the choice is a quick read rather than three full passes."
+            },
+            {
+              "title": "Author the four validation skills",
+              "description": "Load the customize skill for the host.skills.* SDK, then author bridge-extract (fetch full text → six-role model card), bridge-align (two cards → template table), bridge-synthesize (the double-well falsification harness that adjudicates Level 3), and bridge-controls (concept-high/primitive-low false friends from a corpus). Each ships SKILL.md plus a kernel.py of reusable helpers."
+            },
+            {
+              "title": "Publish skills and smoke-test",
+              "description": "Publish all four skills, then verify each loads cleanly and its kernel helpers are callable — running bridge-synthesize end-to-end on the stored double-well case to confirm it reproduces the Level-3 verdict. Report the one-call invocation for the next bridge."
+            }
+          ]
+        }
+      ],
+      "id": "phase-0"
+    }
+  ],
+  "desired_outputs": [
+    "Three LaTeX manuscript variants (narrow translation / translation+method / position) with compiled PDFs",
+    "Three self-contained HTML reading versions",
+    "A side-by-side comparison brief to choose between the variants",
+    "Verified bibliography (real DOIs, no fabricated references)",
+    "Paper-grade figure set",
+    "Four published skills: bridge-extract, bridge-align, bridge-synthesize, bridge-controls"
+  ],
+  "feasibility": {
+    "confidence": "medium",
+    "rationale": "The manuscript itself is well-supported — both papers' equations are already extracted from full text and the three-level verdict is backed by a running synthetic test. The honest limitation is that the paper's empirical core is currently a toy double-well demonstration rather than a real paired dataset, so I will mark the real-data experiment as the stated next step rather than claiming it; I will also verify a TeX toolchain exists and fall back to a different PDF route if not."
+  }
+}

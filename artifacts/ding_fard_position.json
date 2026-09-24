@@ -1,0 +1,25 @@
+{
+ "prim": 0.8412,
+ "concept": 0.4322,
+ "prim_pctile": 80.9,
+ "concept_pctile": 94.7,
+ "concept_P90": 0.3956,
+ "in_hidden_quadrant": false,
+ "in_both_high": false,
+ "ding_sig": {
+  "STATE": 2,
+  "TRANSITION_OPERATOR": 1,
+  "OBJECTIVE": 4,
+  "SEARCH": 1,
+  "REPRESENTATION": 4,
+  "FEEDBACK": 0
+ },
+ "fard_sig": {
+  "STATE": 3,
+  "TRANSITION_OPERATOR": 0,
+  "OBJECTIVE": 2,
+  "SEARCH": 0,
+  "REPRESENTATION": 3,
+  "FEEDBACK": 1
+ }
+}

@@ -1,0 +1,7 @@
+layer,modeled_1to5_revised,note
+Evolutionary Pressure,2,fitness as point-measurements; not a reusable objective
+Harness Inputs,3,"REVISED up from 1: modeled to precision in systems-bio (GRN/cell-fate), but disjoint (2% overlap) from evolution-ML"
+State Transitions,3,REVISED up from 2: critical-transition & trajectory models exist; not unified with evolutionary search
+Biological Programs,5,protein/genomic FMs read these zero-shot
+Regulatory Networks,3,cis-grammar partial; GRN inference mature but separate
+Capability,4,phenotype prediction strong for structure/function

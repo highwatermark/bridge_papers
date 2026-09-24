@@ -1,0 +1,7 @@
+route,model,spearman_vs_truth,spearman_unaligned,interior_minima,truth_minima,mlp_seed_spearman,mlp_seed_minima
+gp,gaussian process,1.0,-1.0,4,4,,
+rbf,RBF interpolation (thin-plate),0.998,-0.998,4,4,,
+mlp,"2-layer MLP potential (64-64 tanh, L-BFGS, mean of 5 seeds)",1.0,-1.0,4,4,"[1.0, 1.0, 1.0, 0.999, 1.0]","[4, 4, 4, 4, 4]"
+quad_regression,full quadratic regression on labels,0.601,-0.601,1,4,,
+hopfield_continuous,hopfield energy,0.338,0.338,0,4,,
+hopfield_discrete,"Hopfield on {-1,+1}^2 (Fard's actual dynamics)",,,2,4,,

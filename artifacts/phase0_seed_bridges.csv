@@ -1,0 +1,97 @@
+prim,concept,evo_paradigm,evo_title,har_title,evo_id,har_id
+0.912,0.6,EVO_FORECAST,Parallel reduction in flowering time from de novo mutati,The role of non-genetic inheritance in evolutionary resc,https://openalex.org/W4220804633,https://openalex.org/W2306540176
+0.987,0.593,PHYLO_ML,Contribution of non‐native plants to the phylogenetic ho,Challenges in linking trait patterns to niche differenti,https://openalex.org/W2921026871,https://openalex.org/W2347102655
+0.923,0.592,EVO_FORECAST,Epidemic spreading under mutually independent intra- and,Regulation of prophage induction and lysogenization by p,https://openalex.org/W4306879824,https://openalex.org/W3202638595
+0.927,0.563,STRUCT_PRED,Learning dynamical information from static protein and s,Learning Pathway Dynamics from Single‐Cell Proteomic Dat,https://openalex.org/W2991509871,https://openalex.org/W3008929598
+0.905,0.558,ML_DE,AMaLa: Analysis of Directed Evolution Experiments via An,Niche construction and the environmental term of the pri,https://openalex.org/W3206320462,https://openalex.org/W4385477032
+0.975,0.557,EVO_FORECAST,Genetic and environmental modulation of transposition sh,The role of non-genetic inheritance in evolutionary resc,https://openalex.org/W3119486786,https://openalex.org/W2306540176
+0.902,0.553,ML_DE,Machine learning to predict continuous protein propertie,Learning Pathway Dynamics from Single‐Cell Proteomic Dat,https://openalex.org/W4392563908,https://openalex.org/W3008929598
+0.904,0.534,FITNESS,Characterization of RNA polymerase II trigger loop mutat,Markov State Models of gene regulatory networks,https://openalex.org/W4353016412,https://openalex.org/W2534730685
+0.907,0.527,GENOMIC_FM,A foundation model of transcription across human cell ty,Rapid Chromatin Switch in the Direct Reprogramming of Fi,https://openalex.org/W4406155921,https://openalex.org/W2757332405
+0.94,0.519,EVO_FORECAST,Seasonal timing on a cyclical Earth: Towards a theoretic,Niche construction and the environmental term of the pri,https://openalex.org/W4312211392,https://openalex.org/W4385477032
+0.987,0.516,EVO_FORECAST,The Contemporary Evolution of Fitness,Challenges in linking trait patterns to niche differenti,https://openalex.org/W2888534971,https://openalex.org/W2347102655
+0.991,0.513,EVO_FORECAST,Geographic variation in climate as a proxy for climate c,Challenges in linking trait patterns to niche differenti,https://openalex.org/W2224719019,https://openalex.org/W2347102655
+0.991,0.51,PLM,ProLLaMA: A Protein Large Language Model for Multitask P,SCNS: a graphical tool for reconstructing executable reg,https://openalex.org/W4409882638,https://openalex.org/W2803394774
+0.986,0.509,STRUCT_PRED,rawMSA: End-to-end Deep Learning using raw Multiple Sequ,SCNS: a graphical tool for reconstructing executable reg,https://openalex.org/W2969180072,https://openalex.org/W2803394774
+0.918,0.502,FITNESS,Environmental modulation of global epistasis in a drug r,Niche construction and the environmental term of the pri,https://openalex.org/W4389333260,https://openalex.org/W4385477032
+0.91,0.502,GENOMIC_FM,Sequence modeling and design from molecular to genome sc,SCNS: a graphical tool for reconstructing executable reg,https://openalex.org/W4404349982,https://openalex.org/W2803394774
+0.955,0.498,FITNESS,Characterization of RNA polymerase II trigger loop mutat,Learning Pathway Dynamics from Single‐Cell Proteomic Dat,https://openalex.org/W4353016412,https://openalex.org/W3008929598
+0.991,0.497,GENERATIVE,Generative power of a protein language model trained on ,SCNS: a graphical tool for reconstructing executable reg,https://openalex.org/W4319061788,https://openalex.org/W2803394774
+0.907,0.496,FITNESS,The generative capacity of probabilistic protein sequenc,Multi-modality in gene regulatory networks with slow pro,https://openalex.org/W3208082951,https://openalex.org/W2774133205
+1.0,0.491,GENOMIC_FM,Landscape genomic prediction for restoration of a Eucaly,Challenges in linking trait patterns to niche differenti,https://openalex.org/W2770042056,https://openalex.org/W2347102655
+0.969,0.491,EVO_FORECAST,Rapid evolution of dispersal ability makes biological in,Niche construction and the environmental term of the pri,https://openalex.org/W2582839497,https://openalex.org/W4385477032
+0.993,0.489,FITNESS,Strong selective environments determine evolutionary out,The role of non-genetic inheritance in evolutionary resc,https://openalex.org/W4281689972,https://openalex.org/W2306540176
+0.96,0.489,FITNESS,In vivo functional phenotypes from a computational epist,A deterministic method for estimating free energy geneti,https://openalex.org/W4391304210,https://openalex.org/W2624221999
+0.935,0.486,ML_DE,AMaLa: Analysis of Directed Evolution Experiments via An,Properties of phenotypic plasticity in discrete threshol,https://openalex.org/W3206320462,https://openalex.org/W3211772593
+0.956,0.483,ML_DE,Learned protein embeddings for machine learning,Data integration and inference of gene regulation using ,https://openalex.org/W2791796577,https://openalex.org/W4389774765
+0.988,0.481,EVO_FORECAST,Climate change from an ectotherm perspective: evolutiona,Evolution of environmental cues for phenotypic plasticit,https://openalex.org/W4391817354,https://openalex.org/W2132400740
+0.986,0.48,PHYLO_ML,The evolution of thermal performance curves in response ,Niche construction and the environmental term of the pri,https://openalex.org/W4410535536,https://openalex.org/W4385477032
+0.901,0.48,PHYLO_ML,Learning the heterogeneous hypermutation landscape of im,Cell Fate Decision as High-Dimensional Critical State Tr,https://openalex.org/W3045355398,https://openalex.org/W2952938648
+0.963,0.477,STRUCT_PRED,rawMSA: End-to-end Deep Learning using raw Multiple Sequ,Data integration and inference of gene regulation using ,https://openalex.org/W2969180072,https://openalex.org/W4389774765
+0.966,0.474,EVO_FORECAST,Seasonal timing on a cyclical Earth: Towards a theoretic,Strawberry phenotypic plasticity in flowering time is dr,https://openalex.org/W4312211392,https://openalex.org/W4400131346
+0.917,0.474,FITNESS,Complete combinatorial mutational enumeration of a prote,Mathematical Modelling of Molecular Pathways Enabling Tu,https://openalex.org/W4400558344,https://openalex.org/W1927360907
+0.902,0.468,EVO_COMP,Recombination and Novelty in Neuroevolution: A Visual An,A deterministic method for estimating free energy geneti,https://openalex.org/W4220792007,https://openalex.org/W2624221999
+0.921,0.465,FITNESS,Unsupervised Inference of Protein Fitness Landscape from,Emergence of cooperative bistability and robustness of g,https://openalex.org/W3047799377,https://openalex.org/W2965096664
+0.963,0.462,ML_DE,AMaLa: Analysis of Directed Evolution Experiments via An,Combined genotype and phenotype analyses reveal patterns,https://openalex.org/W3206320462,https://openalex.org/W3000824452
+0.905,0.457,PHYLO_ML,Learning molecular dynamics with simple language model b,A deterministic method for estimating free energy geneti,https://openalex.org/W3019533439,https://openalex.org/W2624221999
+0.902,0.455,FITNESS,A protein dynamics–based deep learning model enhances pr,A deterministic method for estimating free energy geneti,https://openalex.org/W4415256616,https://openalex.org/W2624221999
+0.975,0.452,PLM,ProLLaMA: A Protein Large Language Model for Multitask P,Data integration and inference of gene regulation using ,https://openalex.org/W4409882638,https://openalex.org/W4389774765
+0.912,0.452,PHYLO_ML,ImaGene: a convolutional neural network to quantify natu,SCNS: a graphical tool for reconstructing executable reg,https://openalex.org/W2989915159,https://openalex.org/W2803394774
+0.919,0.448,FITNESS,In vivo functional phenotypes from a computational epist,Markov State Models of gene regulatory networks,https://openalex.org/W4391304210,https://openalex.org/W2534730685
+0.91,0.446,PLM,Biophysics-based protein language models for protein eng,SCNS: a graphical tool for reconstructing executable reg,https://openalex.org/W4414131808,https://openalex.org/W2803394774
+0.954,0.442,EVO_COMP,Learning to Learn Evolutionary Algorithm: A Learnable Di,How to fit in: The learning principles of cell different,https://openalex.org/W4324116578,https://openalex.org/W3015446207
+0.975,0.441,FITNESS,"Infer global, predict local: Quantity-relevance trade-of",The role of non-genetic inheritance in evolutionary resc,https://openalex.org/W4387952018,https://openalex.org/W2306540176
+0.973,0.441,STRUCT_PRED,EquiPNAS: improved protein–nucleic acid binding site pre,SCNS: a graphical tool for reconstructing executable reg,https://openalex.org/W4391291188,https://openalex.org/W2803394774
+0.957,0.439,FITNESS,Inferring protein fitness landscapes from laboratory evo,Cell Fate Decision as High-Dimensional Critical State Tr,https://openalex.org/W4322720299,https://openalex.org/W2952938648
+0.947,0.439,ML_DE,AMaLa: Analysis of Directed Evolution Experiments via An,Learning Pathway Dynamics from Single‐Cell Proteomic Dat,https://openalex.org/W3206320462,https://openalex.org/W3008929598
+0.926,0.437,FITNESS,Discovering pathways through ribozyme fitness landscapes,A deterministic method for estimating free energy geneti,https://openalex.org/W4385801827,https://openalex.org/W2624221999
+0.98,0.434,PLM,Optimizing enzyme thermostability by combining multiple ,Logical-continuous modelling of post-translationally reg,https://openalex.org/W4405795884,https://openalex.org/W2131800582
+0.954,0.434,STRUCT_PRED,How Pairwise Coevolutionary Models Capture the Collectiv,Markov State Models of gene regulatory networks,https://openalex.org/W2783644078,https://openalex.org/W2534730685
+0.963,0.432,FITNESS,Unsupervised Inference of Protein Fitness Landscape from,Combined genotype and phenotype analyses reveal patterns,https://openalex.org/W3047799377,https://openalex.org/W3000824452
+0.916,0.431,STRUCT_PRED,Towards a structurally resolved human protein interactio,Epigenetic regulation of cell fate reprogramming in agin,https://openalex.org/W4317802023,https://openalex.org/W2791763430
+0.906,0.431,EVO_FORECAST,Parallel reduction in flowering time from de novo mutati,Evolution of environmental cues for phenotypic plasticit,https://openalex.org/W4220804633,https://openalex.org/W2132400740
+0.926,0.43,FITNESS,A population genetic interpretation of GWAS findings for,Combined genotype and phenotype analyses reveal patterns,https://openalex.org/W2791118826,https://openalex.org/W3000824452
+0.937,0.429,FITNESS,"Infer global, predict local: Quantity-relevance trade-of",Epigenetic regulation of cell fate reprogramming in agin,https://openalex.org/W4387952018,https://openalex.org/W2791763430
+0.981,0.427,PLM,Optimizing enzyme thermostability by combining multiple ,Interrogating the topological robustness of gene regulat,https://openalex.org/W4405795884,https://openalex.org/W2600259521
+0.906,0.427,FITNESS,Complete combinatorial mutational enumeration of a prote,Cell Fate Decision as High-Dimensional Critical State Tr,https://openalex.org/W4400558344,https://openalex.org/W2952938648
+0.972,0.425,ML_DE,Protein Design by Directed Evolution Guided by Large Lan,Learning Pathway Dynamics from Single‐Cell Proteomic Dat,https://openalex.org/W4401387378,https://openalex.org/W3008929598
+0.974,0.423,ML_DE,AMaLa: Analysis of Directed Evolution Experiments via An,Emergence of cooperative bistability and robustness of g,https://openalex.org/W3206320462,https://openalex.org/W2965096664
+0.965,0.423,FITNESS,Characterization of RNA polymerase II trigger loop mutat,Interrogating the topological robustness of gene regulat,https://openalex.org/W4353016412,https://openalex.org/W2600259521
+0.991,0.422,PHYLO_ML,The evolution of thermal performance curves in response ,Strawberry phenotypic plasticity in flowering time is dr,https://openalex.org/W4410535536,https://openalex.org/W4400131346
+0.942,0.422,FITNESS,Inferring protein fitness landscapes from laboratory evo,The role of non-genetic inheritance in evolutionary resc,https://openalex.org/W4322720299,https://openalex.org/W2306540176
+0.92,0.422,PLM,Optimizing enzyme thermostability by combining multiple ,Bistability and oscillations in co‐repressive synthetic ,https://openalex.org/W4405795884,https://openalex.org/W2593052364
+0.963,0.421,GENERATIVE,Generalizable and scalable protein stability prediction ,A deterministic method for estimating free energy geneti,https://openalex.org/W4417519470,https://openalex.org/W2624221999
+1.0,0.42,EVO_FORECAST,Climate change from an ectotherm perspective: evolutiona,Strawberry phenotypic plasticity in flowering time is dr,https://openalex.org/W4391817354,https://openalex.org/W4400131346
+0.969,0.42,FITNESS,Characterization of RNA polymerase II trigger loop mutat,Logical-continuous modelling of post-translationally reg,https://openalex.org/W4353016412,https://openalex.org/W2131800582
+0.973,0.419,PLM,Fine-tuning protein language models boosts predictions a,SCNS: a graphical tool for reconstructing executable reg,https://openalex.org/W4401966068,https://openalex.org/W2803394774
+0.991,0.418,PHYLO_ML,The evolution of thermal performance curves in response ,Multi-stable bacterial communities exhibit extreme sensi,https://openalex.org/W4410535536,https://openalex.org/W3161606584
+0.973,0.418,ML_DE,Learned protein embeddings for machine learning,SCNS: a graphical tool for reconstructing executable reg,https://openalex.org/W2791796577,https://openalex.org/W2803394774
+0.981,0.417,ML_DE,A machine learning approach for reliable prediction of a,Mathematical Modelling of Molecular Pathways Enabling Tu,https://openalex.org/W2900113977,https://openalex.org/W1927360907
+0.974,0.417,FITNESS,Characterization of RNA polymerase II trigger loop mutat,An enriched network motif family regulates multistep cel,https://openalex.org/W4353016412,https://openalex.org/W2898174520
+0.923,0.417,ML_DE,Deciphering protein evolution and fitness landscapes wit,A deterministic method for estimating free energy geneti,https://openalex.org/W2995361046,https://openalex.org/W2624221999
+0.963,0.414,PLM,Combining Rosetta Sequence Design with Protein Language ,A deterministic method for estimating free energy geneti,https://openalex.org/W4393899190,https://openalex.org/W2624221999
+0.991,0.413,PLM,Masked inverse folding with sequence transfer for protei,SCNS: a graphical tool for reconstructing executable reg,https://openalex.org/W4387966974,https://openalex.org/W2803394774
+0.974,0.413,FITNESS,Characterization of RNA polymerase II trigger loop mutat,Gene regulatory network underlying the immortalization o,https://openalex.org/W4353016412,https://openalex.org/W2588617449
+0.923,0.412,FITNESS,Unsupervised Inference of Protein Fitness Landscape from,Cell Fate Decision as High-Dimensional Critical State Tr,https://openalex.org/W3047799377,https://openalex.org/W2952938648
+0.91,0.411,PLM,A protein language model for exploring viral fitness lan,Modeling the Attractor Landscape of Disease Progression:,https://openalex.org/W4410325217,https://openalex.org/W2606991676
+0.995,0.41,PHYLO_ML,The evolution of thermal performance curves in response ,Evolution of environmental cues for phenotypic plasticit,https://openalex.org/W4410535536,https://openalex.org/W2132400740
+0.957,0.41,ML_DE,Machine learning to predict continuous protein propertie,Cell Fate Decision as High-Dimensional Critical State Tr,https://openalex.org/W4392563908,https://openalex.org/W2952938648
+0.912,0.41,FITNESS,SuperDCA for genome-wide epistasis analysis,Combined genotype and phenotype analyses reveal patterns,https://openalex.org/W2949909460,https://openalex.org/W3000824452
+0.902,0.41,ML_DE,AMaLa: Analysis of Directed Evolution Experiments via An,Evolution of environmental cues for phenotypic plasticit,https://openalex.org/W3206320462,https://openalex.org/W2132400740
+0.901,0.409,STRUCT_PRED,An Integrated Framework Advancing Membrane Protein Model,SCNS: a graphical tool for reconstructing executable reg,https://openalex.org/W1879820513,https://openalex.org/W2803394774
+0.911,0.407,GENERATIVE,Prediction of designer-recombinases for DNA editing with,SCNS: a graphical tool for reconstructing executable reg,https://openalex.org/W4313251027,https://openalex.org/W2803394774
+0.981,0.406,PLM,Fine-tuning protein language models boosts predictions a,Data integration and inference of gene regulation using ,https://openalex.org/W4401966068,https://openalex.org/W4389774765
+0.937,0.406,STRUCT_PRED,EquiPNAS: improved protein–nucleic acid binding site pre,Data integration and inference of gene regulation using ,https://openalex.org/W4391291188,https://openalex.org/W4389774765
+0.927,0.406,GENOMIC_FM,Sequence modeling and design from molecular to genome sc,Modeling the Attractor Landscape of Disease Progression:,https://openalex.org/W4404349982,https://openalex.org/W2606991676
+0.926,0.404,FITNESS,A protein dynamics–based deep learning model enhances pr,Mathematical Modelling of Molecular Pathways Enabling Tu,https://openalex.org/W4415256616,https://openalex.org/W1927360907
+0.905,0.404,PLM,Optimizing enzyme thermostability by combining multiple ,Modeling signaling‐dependent pluripotency with Boolean l,https://openalex.org/W4405795884,https://openalex.org/W2784588023
+0.903,0.404,ML_DE,AMaLa: Analysis of Directed Evolution Experiments via An,Transition state characteristics during cell differentia,https://openalex.org/W3206320462,https://openalex.org/W2950517843
+0.908,0.402,ML_DE,Predicting changes in protein thermodynamic stability up,Logical-continuous modelling of post-translationally reg,https://openalex.org/W3109312535,https://openalex.org/W2131800582
+0.902,0.402,ML_DE,Rapid directed evolution guided by protein language mode,A deterministic method for estimating free energy geneti,https://openalex.org/W7130605770,https://openalex.org/W2624221999
+0.931,0.401,ML_DE,AMaLa: Analysis of Directed Evolution Experiments via An,Reshaping the epigenetic landscape during early flower d,https://openalex.org/W3206320462,https://openalex.org/W2134062116
+0.938,0.399,FITNESS,Discovering pathways through ribozyme fitness landscapes,Markov State Models of gene regulatory networks,https://openalex.org/W4385801827,https://openalex.org/W2534730685
+0.9,0.398,FITNESS,Identifying featured indels associated with SARS-CoV-2 f,Combined genotype and phenotype analyses reveal patterns,https://openalex.org/W4386624280,https://openalex.org/W3000824452
+0.904,0.397,FITNESS,Unsupervised Inference of Protein Fitness Landscape from,Properties of phenotypic plasticity in discrete threshol,https://openalex.org/W3047799377,https://openalex.org/W3211772593
+0.975,0.396,GENERATIVE,Generative power of a protein language model trained on ,Data integration and inference of gene regulation using ,https://openalex.org/W4319061788,https://openalex.org/W4389774765
+0.936,0.396,FITNESS,Genotypic–phenotypic landscape computation based on firs,A deterministic method for estimating free energy geneti,https://openalex.org/W4396627753,https://openalex.org/W2624221999
+0.912,0.396,PHYLO_ML,Learning the heterogeneous hypermutation landscape of im,Mathematical Modelling of Molecular Pathways Enabling Tu,https://openalex.org/W3045355398,https://openalex.org/W1927360907

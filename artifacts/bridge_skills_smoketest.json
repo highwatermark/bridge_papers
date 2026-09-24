@@ -1,0 +1,109 @@
+{
+ "skills_published": [
+  "bridge-extract",
+  "bridge-align",
+  "bridge-synthesize",
+  "bridge-controls"
+ ],
+ "level3_harness": {
+  "truth_interior_minima": 4,
+  "formalisms": {
+   "gp": {
+    "name": "gaussian process",
+    "spearman_vs_truth": 1.0,
+    "spearman_unaligned": -1.0,
+    "interior_minima": 4,
+    "recovers_structure": true
+   },
+   "hopfield": {
+    "name": "hopfield energy",
+    "spearman_vs_truth": 0.338,
+    "spearman_unaligned": 0.338,
+    "interior_minima": 0,
+    "recovers_structure": false
+   }
+  },
+  "same_object": false,
+  "note": "Synthetic benchmark: establishes representational capacity, not biological consequence."
+ },
+ "alignment": {
+  "n_roles": 6,
+  "both_filled": 6,
+  "fraction": 1.0
+ },
+ "verdict": {
+  "level1_vocabulary": true,
+  "level2_role_structure": true,
+  "level3_same_object": false,
+  "load_bearing_role": "OBJECTIVE"
+ },
+ "controls": {
+  "n_controls": 3,
+  "all_role_mismatched": true,
+  "n_more_similar_than_accepted": 3,
+  "persuasive": true
+ },
+ "bridge2_citation_overlap": {
+  "shared": 0,
+  "jaccard": 0.0
+ },
+ "guardrail_level3_without_evidence": "raises ValueError (verified)",
+ "extract": {
+  "skill": "bridge-extract",
+  "tested_on": "10.1038/s41467-019-13633-0 (Ding et al. 2019, re-fetched PDF)",
+  "pdf_text_chars": 88125,
+  "hits_per_role": {
+   "STATE": 3,
+   "REPRESENTATION": 3,
+   "OBJECTIVE": 3,
+   "TRANSITION_OPERATOR": 3,
+   "SEARCH": 3,
+   "FEEDBACK": 3
+  },
+  "objective_window_recovers_elbo": true,
+  "elbo_cue": "objective function",
+  "elbo_offset": 12229,
+  "blank_card_fields": [
+   "doi",
+   "feedback",
+   "objective",
+   "paper_id",
+   "quotes",
+   "representation",
+   "search",
+   "state",
+   "transition_operator",
+   "validation"
+  ],
+  "completeness_empty": {
+   "filled": [],
+   "n_filled": 0,
+   "missing": [
+    "state",
+    "representation",
+    "objective",
+    "transition_operator",
+    "search",
+    "feedback"
+   ]
+  },
+  "completeness_filled": {
+   "filled": [
+    "state",
+    "representation",
+    "objective",
+    "transition_operator",
+    "search",
+    "feedback"
+   ],
+   "n_filled": 6,
+   "missing": []
+  }
+ },
+ "skills_verified": [
+  "bridge-extract",
+  "bridge-align",
+  "bridge-synthesize",
+  "bridge-controls"
+ ]
+}

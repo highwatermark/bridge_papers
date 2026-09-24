@@ -2,8 +2,8 @@
 
 | Item | Status | Owner | Effort |
 |---|---|---|---|
-| Author line, affiliations, corresponding author | Placeholder | **You** | minutes |
-| Funding, competing interests, CRediT contributions | Placeholder | **You** | minutes |
+| Author line, affiliations, corresponding author | **Done** | **You** | minutes |
+| Funding, competing interests, CRediT contributions | **Done** (sole author, no funding, no competing interests) | **You** | minutes |
 | Deposit data/code (Zenodo or OSF) and insert DOI | Files ready (`v2/data/`) | **You** (account needed) | 1 h |
 | **Precision study**: two raters label `rater_sheet_N150_BLIND.csv`; κ; third-rater adjudication; unblind with key | Kit ready, **not run** | Two domain raters + one adjudicator | ~1 day per rater |
 | Independent re-rating of Table 1 by a second reader | Not done | One reader with both PDFs | 1–2 h |

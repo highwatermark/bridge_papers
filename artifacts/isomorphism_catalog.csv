@@ -1,0 +1,7 @@
+computational_role,evolution-ML_expression,systems-harness_expression,evo_papers,harness_papers,both_sides
+STATE,genotype / sequence,cell state / attractor,275,66,yes
+TRANSITION_OPERATOR,mutation / variation operator,signal-induced state transition,137,76,yes
+OBJECTIVE,fitness landscape,"epigenetic / potential landscape, attractor stability",262,75,yes
+SEARCH,evolutionary / directed search,trajectory through state space,218,83,yes
+REPRESENTATION,learned embedding / foundation model,gene regulatory network / circuit,162,58,yes
+FEEDBACK,selection over generations,environmental signal / repeated stimulus,166,100,yes

@@ -23,6 +23,10 @@ v2/                     Paper B v2 — manuscript, appendices 1–4, diff vs dra
   rater_kit/            blind 150-pair sheet for the precision study (key withheld — see below)
 bridge2_paper{A,B,C}_*.tex, html/, fig{A,B,C}_*.png   earlier drafts (superseded; kept for the record)
 supporting/             Bridge 2 validation packet, Phase-0 wedge memo, ResearchOS architecture, review index
+artifacts/              every project artifact (latest version of each; 106 files) + ARTIFACT_MANIFEST.csv with artifact/version ids and SHA-256
+                        raw export: markdown here may contain {{artifact:…}} links; read the edited copies in v2/ and findings/ instead
+notebook/
+  session_notebook.ipynb  all 325 python/bash cells run in the analysis, in order, with truncated outputs (credentials redacted)
 findings/
   reports/              stage reports + whitepaper (landscape → capability reframe → generative stack → harness operator → auto-research loop → deep connectivity → connectivity matrix)
   figures/              fig1–fig14
@@ -39,6 +43,13 @@ findings/
 ```
 
 After labelling, publish the key; anyone can check it against this hash.
+
+## What is deliberately not in this repository
+
+- **Credentials.** The OpenAlex API key is read from the `OPENALEX_API_KEY` environment variable and never written to disk. Every file was scanned for the key value before commit. The notebook and artifacts also have contact emails passed as `mailto=` replaced with `<REDACTED_EMAIL>`, and home-directory paths replaced with `~`. The email addresses that remain are authors' corresponding addresses inside public paper abstracts and full texts.
+- **The precision-study key** (`rater_key_N150_DO_NOT_SHARE.csv`) — see the hash above.
+- **Personal onboarding notes** and **machine-local copy scripts** (`copy_papers*.sh`, which only contain absolute paths on one machine).
+- **Notebook re-runnability.** Cells ran in stateful kernels across several environments; the reproducible entry points are `v2/data/detector.py` and the frozen data files.
 
 ## Reproducing Paper B numbers
 
@@ -59,4 +70,6 @@ Every number in the manuscript is templated from `v2/data/manuscript_numbers.jso
 - Judgment-scored matrices in `findings/` (mechanism/transfer/confidence ratings, scenario projections) are author priors, not measurements.
 - Trend claims in the landscape stage use 2015–2024 only.
 
-Authors, affiliations, funding and licence: **to fill** (see `v2/submission_checklist.md`).
+**Author:** Hari Lakshmanan — Independent researcher (no institutional affiliation). Contact: hariase@gmail.com. No external funding; no competing interests.
+
+Licence: **not yet chosen** — until one is added, default copyright applies and others may not reuse the material.

@@ -11,3 +11,7 @@ copy_papers*.sh
 *.out
 *.pdf
 .DS_Store
+# personal onboarding notes
+onboarding-profile.md
+.env
+*.key

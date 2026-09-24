@@ -1,0 +1,37 @@
+{
+ "ding": {
+  "title": "Deciphering protein evolution and fitness landscapes with latent space models",
+  "authors": [
+   "Xinqiang Ding",
+   "Zhengting Zou",
+   "Charles L. Brooks"
+  ],
+  "year": 2019,
+  "venue": "Nature Communications",
+  "doi": "10.1038/s41467-019-13633-0",
+  "state": "protein sequence x (one-hot over MSA columns)",
+  "rep": "z = phi(x): VAE encoder q_phi(z|x), 2-D latent",
+  "objective_model": "ELBO = E_q[log p(x|z)] - KL(q(z|x)||p(z)); p(z)=N(0,I)",
+  "fitness_surface": "J(z) = Gaussian-process regression f(z) with RBF kernel over latent z; predicts scalar fitness/stability (T50)",
+  "transition": "mutations move x, hence z; adaptive walk = motion on J(z)",
+  "validation": "T50 stability prediction, 10-fold CV, Pearson 0.80\u00b10.06 on 2-D latent",
+  "scalar_field": true
+ },
+ "fard": {
+  "title": "Modeling the Attractor Landscape of Disease Progression: a Network-Based Approach",
+  "authors": [
+   "Atefeh Taherian Fard",
+   "Mark A. Ragan"
+  ],
+  "year": 2017,
+  "venue": "Frontiers in Genetics",
+  "doi": "10.3389/fgene.2017.00048",
+  "state": "P(t): gene-expression pattern vector (network state)",
+  "rep": "Hopfield weight matrix W = PCC(i,j), w_ii=0 (correlation network)",
+  "objective_model": "Lyapunov energy E[P] = -1/2 P W P^T",
+  "fitness_surface": "E over states; attractors = local minima; landscape visualized by interpolating E over first 2 PCs",
+  "transition": "P(t+1) = sgn(P(t) W)  (discrete Hopfield update)",
+  "validation": "Parkinson's, glioma, colorectal cancer; attractor basin size/robustness; cancer attractor wider than normal",
+  "scalar_field": true
+ }
+}

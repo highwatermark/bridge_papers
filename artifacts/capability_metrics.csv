@@ -1,0 +1,8 @@
+capability,n,growth_x,median_cpy,median_year,paradigms
+Protein fold & function,62,5.4,16.8,2023,PLM+STRUCT_PRED
+Regulatory control of expression,29,1.4,21.2,2021,GENOMIC_FM
+Fitness-landscape navigation,64,8.7,7.0,2023,FITNESS
+Generative evolvability,33,15.0,20.0,2022,GENERATIVE
+Predictable adaptation,40,2.3,10.4,2021,EVO_FORECAST
+Directed / accelerated search,104,2.2,13.4,2021,ML_DE+EVO_COMP
+Ancestral program reconstruction,72,1.6,11.6,2020,PHYLO_ML

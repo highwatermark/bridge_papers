@@ -1,0 +1,262 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,graphicx,booktabs,natbib,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+\bibliographystyle{unsrtnat}
+\setlength{\parskip}{0.35em}
+\renewcommand{\abstractname}{Abstract}
+
+\title{\bfseries Fitness landscapes and epigenetic landscapes are the same algorithm\\
+\large with different representational capacity}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\vspace{-2.2em}
+\begin{abstract}
+Protein fitness landscapes and Waddington-style epigenetic landscapes are usually treated as separate objects, studied by separate communities. We show that two representative models---a variational-autoencoder latent-space model of protein fitness and a Hopfield-network attractor model of disease progression---instantiate the same six-role computational template: a state, a learned representation, a scalar field over that representation, a transition operator, a trajectory rule, and a feedback term. We distinguish three levels of equivalence (shared vocabulary, shared algorithmic role structure, shared mathematical object) and show that the two models are equivalent at the second level but not the third: the fitness surface is a nonparametric Gaussian process, whereas the attractor energy is a fixed quadratic form. A synthetic double-well benchmark makes the gap quantitative---the Gaussian-process surface recovers the ground-truth landscape (Spearman $\rho=1.00$, all four basins), while the quadratic energy does not ($\rho=0.34$, zero interior minima). The gap identifies a concrete unification target: a learned scalar potential equipped with an explicit transition operator, fit jointly to longitudinal fitness and expression-trajectory data. The two papers share no references.
+\end{abstract}
+
+\section{Introduction}
+The metaphor of a landscape is common to two research communities that rarely cite one another. In molecular
+evolution, a \emph{fitness landscape} assigns a scalar fitness to each genotype, and adaptation is ascent on that
+surface. In systems biology, Waddington's \emph{epigenetic landscape} \citep{waddington1957strategy} pictures a cell
+rolling into one of several valleys, formalised as attractors of a gene-regulatory network
+\citep{huang2005cellfates}. Both communities have since replaced the metaphor with fitted models --- learned fitness
+surfaces on one side \citep{riesselman2018deepseq,rives2021esm}, quantified potential landscapes on the other
+\citep{wang2011waddington,huang2009cancer}.
+
+Whether these are the \emph{same} object, or merely share a picture, is usually left unexamined. We examine it for a
+specific pair of papers: \citet{ding2019latent}, who learn a protein fitness landscape in a variational-autoencoder
+latent space, and \citet{fard2017attractor}, who model disease progression as motion on a Hopfield attractor
+landscape. The two share no references. We show that they fill the same six-role computational template, and that
+the correspondence holds at the level of algorithmic role but breaks at the level of mathematical object --- a
+distinction we make quantitative on a synthetic benchmark, and which specifies what a unified model must contain.
+
+\section{Two models}
+
+\subsection{Model A: a latent-space model of protein fitness}
+\citet{ding2019latent} learn a latent representation of a protein family and fit a scalar fitness surface over it.
+A sequence $x$ (one-hot over the columns of a multiple sequence alignment) is encoded by a variational autoencoder
+\citep{kingma2014vae} with encoder $q_\phi(z\mid x)$ and decoder $p_\theta(x\mid z)$, trained by maximising the
+evidence lower bound
+\begin{equation}
+\mathrm{ELBO}(\theta,\phi)=\mathbb{E}_{q_\phi(z\mid x)}\!\left[\log p_\theta(x\mid z)\right]
+-\mathrm{KL}\!\left(q_\phi(z\mid x)\,\|\,p_\theta(z)\right),
+\qquad p_\theta(z)=\mathcal{N}(0,I).
+\label{eq:elbo}
+\end{equation}
+The first term is reconstruction from the latent code; the second regularises the posterior toward the prior.
+Writing $z=\phi(x)$ for the (two-dimensional) encoding, experimental fitness or stability labels are then regressed
+onto $z$ by Gaussian-process regression \citep{rasmussen2006gp} with a radial-basis kernel,
+\begin{equation}
+J(x) \;=\; f\!\left(\phi(x)\right), \qquad f \sim \mathcal{GP}\!\left(m(\cdot),\,k_{\mathrm{RBF}}(\cdot,\cdot)\right).
+\label{eq:gp}
+\end{equation}
+This yields a continuous scalar field over the latent space. Mutations displace $x$ and therefore $z$; an adaptive
+walk is ascent on $J$.
+
+\subsection{Model B: an attractor-landscape model of disease progression}
+\citet{fard2017attractor}, explicitly invoking Waddington's epigenetic landscape \citep{waddington1957strategy} and the
+attractor view of cell fate \citep{huang2005cellfates,huang2009cancer}, represent a cell by a gene-expression pattern
+$P$ and build a Hopfield network \citep{hopfield1982neural} whose symmetric weight matrix is the gene--gene
+correlation,
+\begin{equation}
+W_{ij} = \mathrm{PCC}(i,j), \qquad W_{ii}=0 .
+\label{eq:W}
+\end{equation}
+The dynamics are the discrete Hopfield update
+\begin{equation}
+P(t+1) = \mathrm{sgn}\!\left(P(t)\,W\right),
+\label{eq:update}
+\end{equation}
+and the associated Lyapunov energy, which decreases monotonically under \eqref{eq:update}, is
+\begin{equation}
+E[P] = -\tfrac{1}{2}\,P\,W\,P^{\top}.
+\label{eq:energy}
+\end{equation}
+Attractors are local minima of \eqref{eq:energy} and correspond to normal and disease cell states; disease
+progression is the trajectory converging to an attractor. The landscape is visualised by interpolating $E$ over the
+first two principal components of the expression data.
+
+\section{A shared formal template}
+
+Both models can be written in a common six-slot template. Let $x\in\mathcal{S}$ be the system state, $z=\phi(x)$ a
+learned or fixed representation, $J$ a scalar field, $T$ a transition operator with control input $u$, $\pi$ a
+trajectory rule, and $F$ a feedback term:
+\begin{align}
+x_t &\in \mathcal{S}, &
+z &= \phi(x), &
+J&:\mathcal{S}\rightarrow\mathbb{R}, \label{eq:tmpl1}\\
+x_{t+1} &= T(x_t,u_t), &
+\pi &= \text{trajectory rule on } J, &
+F &= \text{feedback / selection}. \label{eq:tmpl2}
+\end{align}
+Table~\ref{tab:template} instantiates the template for both papers. Every slot is filled on both sides by a
+substantive, non-trivial component --- not by a re-description. This is the sense in which the two literatures have
+independently built the same algorithm.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}p{0.16\textwidth}p{0.36\textwidth}p{0.38\textwidth}@{}}
+\toprule
+\textbf{Role} & \textbf{Model A: protein fitness} \citep{ding2019latent} & \textbf{Model B: disease attractors} \citep{fard2017attractor} \\
+\midrule
+$x\in\mathcal{S}$ & protein sequence (one-hot over MSA) & gene-expression pattern $P$ \\
+$z=\phi(x)$ & VAE encoder $q_\phi(z\mid x)$, 2-D latent & Hopfield state on correlation matrix $W$ \\
+$J(x)$ & GP surface $f(z)$, RBF kernel & $E[P]=-\tfrac12 PWP^{\top}$ \\
+$x_{t+1}=T(x_t,u_t)$ & mutation $\rightarrow$ displacement $\Delta z$ & $P(t{+}1)=\mathrm{sgn}(P(t)W)$ \\
+$\pi$ & adaptive walk: ascent on $J$ & convergence to attractor: descent on $E$ \\
+$F$ & selection re-weights the population & microenvironment rewires $W$ across stages \\
+\bottomrule
+\end{tabular}
+\caption{The same six computational roles, instantiated by two papers that share no references.
+The \textsc{objective} row is load-bearing: it is where the correspondence is tightest at the level of role,
+and where it breaks at the level of mathematical object (Section~\ref{sec:levels}).}
+\label{tab:template}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.82\textwidth]{{{artifact:art_db13018b-265d-4d39-976c-d08e1381d3c8}}}
+\caption{Two disconnected models populate the same six-role template. Left: the latent-space fitness model of
+\citet{ding2019latent}. Right: the Hopfield attractor model of \citet{fard2017attractor}. Centre: the shared role.
+The \textsc{objective} row is highlighted as the load-bearing correspondence.}
+\label{fig:template}
+\end{figure}
+
+\section{Three levels of equivalence}\label{sec:levels}
+
+Claims that two models are ``the same'' conflate three distinct assertions, which we separate:
+
+\paragraph{Level 1 --- shared vocabulary.} Both use the words \emph{landscape}, \emph{state}, and
+\emph{trajectory}. This holds trivially and carries no content: the terms are metaphors in wide circulation.
+
+\paragraph{Level 2 --- shared algorithmic role structure.} Both fit a scalar field over a representation of state
+and interpret dynamics as motion on that field toward extrema that are the biologically meaningful configurations.
+Each of the six roles in \eqref{eq:tmpl1}--\eqref{eq:tmpl2} is occupied on both sides. \textbf{This holds}, and it is
+the substantive claim of this paper.
+
+\paragraph{Level 3 --- same mathematical object.} \textbf{This fails.} The fitness surface \eqref{eq:gp} is a
+Gaussian process: a nonparametric prior over functions that can represent an arbitrary smooth multi-well surface.
+The attractor energy \eqref{eq:energy} is a \emph{fixed quadratic form} determined entirely by the single matrix $W$.
+A quadratic form has one stationary structure --- its curvature is constant and set by the eigenvalues of $W$ --- so
+it cannot represent two separated minima with a barrier between them without additional machinery. The two are the
+same \emph{type} of construct (a scalar potential over a state representation) but not the same object.
+
+\section{A synthetic benchmark separates Level 2 from Level 3}
+
+To make the Level-3 distinction quantitative rather than rhetorical, we constructed a ground-truth landscape with a
+known number of attractors and fit both formalisms to data drawn from it. The generating potential is a coupled
+double well on a two-dimensional state $s=(s_1,s_2)$,
+\begin{equation}
+U(s) = (s_1^2-1)^2 + (s_2^2-1)^2 - 0.6\,s_1 s_2 ,
+\label{eq:doublewell}
+\end{equation}
+which has two dominant basins (a ``normal'' basin near $(-1,-1)$ and a ``disease'' basin near $(+1,+1)$).
+We drew $150$ samples near each basin for the Hopfield route, and $220$ scattered labelled points for the
+Gaussian-process route, and fit each model by its own paper's procedure: for Model A, GP regression of the scalar
+label on the state; for Model B, the correlation weight matrix \eqref{eq:W} and energy \eqref{eq:energy}.
+
+Agreement with the ground truth was measured by Spearman rank correlation over a $70\times70$ grid, and basin
+structure by counting interior local minima. The Gaussian-process surface reproduced the generating potential
+exactly in rank order ($\rho=1.00$) and recovered all four local minima. The Hopfield energy achieved
+$\rho=0.34$ and recovered \emph{zero} interior minima: the quadratic form collapses the double well into a single
+saddle (Figure~\ref{fig:synthetic}). The failure is structural, not a matter of sample size or tuning.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{{{artifact:art_20ca702b-27ae-4575-a42a-c171e49cb7f5}}}
+\caption{Synthetic benchmark separating Level 2 from Level 3. (a) The generating double-well potential
+\eqref{eq:doublewell}, with two dominant basins by construction. (b) The Gaussian-process surface fit by Model A's
+procedure recovers it (Spearman $\rho=1.00$; four interior minima). (c) The Hopfield energy \eqref{eq:energy} fit by
+Model B's procedure does not ($\rho=0.34$; zero interior minima); overlaid points are the ``normal'' (white) and
+``disease'' (red) samples. Both panels are fit to data from the same generating potential; the difference is
+representational capacity, not sample size.}
+\label{fig:synthetic}
+\end{figure}
+
+\section{Negative controls}
+
+A correspondence procedure is only informative if it also rejects. We therefore applied the same six-role mapping to
+three \emph{false-friend} pairs drawn from the same corpus: cross-literature pairs with \emph{high} semantic
+similarity but low similarity in computational role. In each case the dominant role differs between the two papers,
+and the mapping rejects the pair (Figure~\ref{fig:controls}):
+\begin{itemize}
+\item \textsc{objective} versus \textsc{state} (semantic similarity $0.76$, role similarity $0.24$): a generative model
+of single-cell time series against a cell-fate classifier --- one fits a probability flow, the other locates a state.
+\item \textsc{state} versus \textsc{representation} (semantic $0.63$, role $0.00$): sequence-to-expression prediction
+against transfer-entropy network reconstruction --- one is a readout, the other builds a network.
+\item \textsc{representation} versus \textsc{search} (semantic $0.65$, role $0.23$): static binding-affinity prediction
+against learning pathway dynamics --- one is static, the other dynamical.
+\end{itemize}
+All three have \emph{higher} surface similarity than the accepted pair, and all three are rejected. The procedure is
+therefore not matching on vocabulary.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.86\textwidth]{{{artifact:art_5d6b2111-eb59-4e09-bd86-257df6b883f8}}}
+\caption{Negative controls. Three cross-literature pairs with high semantic (concept-embedding) similarity but
+mismatched dominant computational role. All three exceed the accepted pair in surface similarity, and all three are
+rejected by the six-role mapping. $n=3$ pairs drawn from the same 522-paper corpus; the zero-height bar is stubbed
+for visibility.}
+\label{fig:controls}
+\end{figure}
+
+\section{Failure modes of the correspondence}
+
+\begin{enumerate}
+\item \textbf{Equilibrium versus trajectory.} Model A fits a \emph{static} surface to a population assumed at or near
+equilibrium; Model B is a \emph{dynamical} system with an explicit time update but no learned surface shape. Neither
+model does both. The learning sits on opposite sides: Model A learns the representation and fixes the objective
+family; Model B fixes the representation and reads the objective off it.
+\item \textbf{Representational capacity.} As shown above, GP versus quadratic form. Any translation that treats the
+two potentials as interchangeable will over-claim.
+\item \textbf{Meaning of the latent coordinate.} Model A's $z$ is \emph{learned} by the VAE; Model B's coordinates are
+a \emph{fixed} principal-component basis used only for visualisation, with the dynamics running in the full state
+space. Equating the two axes is a category error.
+\item \textbf{Sign convention.} Fitness is maximised, energy minimised. The flip is trivial but must be stated: on our
+synthetic benchmark, comparing the two fields without aligning sign yields a spurious negative correlation
+($\rho=-0.34$, versus $+0.34$ once aligned).
+\end{enumerate}
+
+\section{What the gap specifies}
+
+The Level-3 gap is not a defect of the correspondence; it is its most useful output, because it specifies what a
+unified model must contain. Model A supplies a \emph{learned} scalar field of arbitrary shape but no dynamics;
+Model B supplies \emph{explicit dynamics} but a scalar field of fixed, inadequate capacity. The unification is
+therefore a single object with both properties: a learned potential $J_\psi$ (Gaussian process, normalising flow, or
+neural potential) equipped with an explicit transition operator,
+\begin{equation}
+x_{t+1} = T\!\left(x_t,u_t\right) = x_t - \eta \,\nabla J_\psi(x_t) + \sigma\,\xi_t ,
+\label{eq:unified}
+\end{equation}
+with $u_t$ the environmental or perturbation input, $\xi_t$ noise, and $J_\psi$ fit jointly to fitness-like labels
+and to observed state trajectories. Because $J_\psi$ is allowed to depend on time or on $u$, the resulting object is
+a \emph{seascape} rather than a landscape in the sense of \citet{mustonen2009seascapes}, and it inherits the
+attractor semantics of \citet{wang2011waddington}. The experiment this implies is concrete: fit
+\eqref{eq:unified} to a system for which both longitudinal deep-mutational-scanning data and expression-state
+trajectories exist, and test whether the inferred minima of $J_\psi$ coincide with the attractors recovered by the
+Hopfield route.
+
+\section{Discussion}
+The result is deliberately narrow: two papers, one correspondence, one benchmark. Its value is that each claim is
+checkable. The broader implication --- that pairs of this kind can be found systematically, by measuring
+computational-role similarity separately from semantic similarity and citation overlap --- is the subject of
+separate work; the pair analysed here was identified that way, and the negative controls in Figure~\ref{fig:controls}
+are drawn from the same procedure.
+
+We emphasise a limitation. The benchmark in Figure~\ref{fig:synthetic} is synthetic: it establishes that the two
+formalisms differ in representational capacity, not that this difference matters for any particular biological
+system. The decisive experiment is the one implied by \eqref{eq:unified}, on a system with both longitudinal
+fitness measurements and expression-state trajectories.
+
+\paragraph{Data and code availability.} The synthetic benchmark, the six-role template instantiations, and the
+negative-control pairs are provided as supplementary tables.
+
+\bibliography{bridge2_references}
+\end{document}

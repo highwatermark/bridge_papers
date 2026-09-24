@@ -1,0 +1,7 @@
+layer,input_equation_term,role,modeled_as_learnable_1to5,adjacent_corpus_n,field_reads_via
+Evolutionary Pressure,selection objective,the loss the search optimizes,2,104,Fitness-landscape navigation; Predictable adaptation
+Harness Inputs,Environment + Repeated stimulus,the niche/context that scores & conditions,1,0,"(Genomic FM cell-context, partial)"
+State Transitions,Time + Feedback,the trajectory the system takes under stimulus,2,144,Predictable adaptation; Directed/accelerated search
+Biological Programs,the Genome's learned solution,reusable sequence/structure solutions,5,95,Protein fold & function; Generative evolvability
+Regulatory Networks,wiring of the programs,context-dependent control logic,3,29,Regulatory control of expression
+Capability,expressed output,the phenotype we observe & test,4,134,Protein fold & function; Ancestral reconstruction
