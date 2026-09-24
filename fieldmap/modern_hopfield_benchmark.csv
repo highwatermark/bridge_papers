@@ -1,0 +1,11 @@
+samples,model,spearman,interior_minima,truth_minima
+samples from 2 wells (as before),quadratic Hopfield E=-½xᵀWx,0.338,0,4
+samples from 2 wells (as before),"modern Hopfield (lse), β=1",0.597,2,4
+samples from 2 wells (as before),"modern Hopfield (lse), β=2",0.513,2,4
+samples from 2 wells (as before),"modern Hopfield (lse), β=4",0.459,2,4
+samples from 2 wells (as before),"modern Hopfield (lse), β=8",0.401,2,4
+samples from all 4 wells,quadratic Hopfield E=-½xᵀWx,-0.338,0,4
+samples from all 4 wells,"modern Hopfield (lse), β=1",0.604,1,4
+samples from all 4 wells,"modern Hopfield (lse), β=2",0.717,4,4
+samples from all 4 wells,"modern Hopfield (lse), β=4",0.383,4,4
+samples from all 4 wells,"modern Hopfield (lse), β=8",0.201,4,4

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Field map — shared landscape template across disconnected literatures</title>
+<style>
+  :root {
+    --ink: #1a2332;
+    --muted: #5b6573;
+    --rule: #e6e8ec;
+    --bg: #f4f2ee;
+    --paper: #fffefb;
+    --c1: #0f6b5c;
+    --c1b: #d8efe9;
+    --c2: #8a3b12;
+    --c2b: #f6e4d6;
+    --c3: #2c4a8c;
+    --c3b: #dce6f7;
+    --c4: #5b2d7a;
+    --c4b: #eadcf3;
+    --gap: #9b1d3a;
+    --ok: #1f6b3a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Iowan Old Style", Palatino, Georgia, serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.5;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 36px 28px 80px; }
+  .badge {
+    display: inline-block;
+    font-family: -apple-system, sans-serif;
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    font-weight: 700;
+    background: #c2410c;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 3px;
+  }
+  h1 { font-size: 28px; line-height: 1.2; margin: 14px 0 6px; }
+  .sub { color: var(--muted); font-size: 17px; margin-bottom: 22px; }
+  h2 {
+    font-size: 20px;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 6px;
+    margin: 36px 0 12px;
+  }
+  p, li { font-size: 16px; }
+  .note {
+    background: var(--paper);
+    border-left: 3px solid #c2410c;
+    padding: 14px 18px;
+    margin: 16px 0 28px;
+    font-size: 15px;
+  }
+  .map-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 8px 8px 4px;
+    box-shadow: 0 1px 18px rgba(0,0,0,.05);
+  }
+  figcaption { font-size: 13.5px; color: var(--muted); padding: 8px 10px 12px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  th, td { border-bottom: 1px solid var(--rule); padding: 8px 7px; vertical-align: top; text-align: left; }
+  th { background: #faf7f2; font-size: 11px; letter-spacing: .04em; text-transform: uppercase; }
+  .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+  .strong { font-weight: 700; color: var(--ok); }
+  .weak { color: #b45309; font-weight: 600; }
+  .empty { color: #9aa3ad; }
+  .legend span { margin-right: 14px; font-size: 13px; font-family: -apple-system, sans-serif; }
+  .xfer { margin: 10px 0; padding: 10px 12px; background: #fff; border: 1px solid var(--rule); border-radius: 6px; }
+  .xfer b { color: var(--gap); }
+  .foot { margin-top: 28px; font-size: 13px; color: var(--muted); font-family: -apple-system, sans-serif; }
+  code { font-size: 12.5px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<span class="badge">Supplement · field map</span>
+<h1>The six-role landscape template is common.<br>Citation graphs are not.</h1>
+<div class="sub">Ding 2019 × Fard 2017 is the adjudicated specimen, not the population. Four substrate clusters fill the same slots; the missing transfers are the paper’s opportunity set.</div>
+
+<div class="note">
+  <b>Read this figure as an interface, not an identity claim.</b>
+  Clusters share a role template (state, representation, scalar field, transition, trajectory rule, feedback).
+  They almost never share a mathematical object. Solid arrows = routine within-cluster flow.
+  Dashed crimson arrows = transfers that topic-search and citation tools miss.
+</div>
+
+<div class="map-card">
+<svg viewBox="0 0 980 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Field map of landscape template clusters and missing transfers">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9b1d3a"/>
+    </marker>
+    <marker id="arrg" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6b7280"/>
+    </marker>
+    <filter id="s" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="1" stdDeviation="1.2" flood-opacity=".12"/>
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="980" height="640" fill="#fffefb"/>
+  <text x="24" y="28" font-family="Georgia, serif" font-size="15" font-weight="700" fill="#1a2332">Shared interface</text>
+  <text x="24" y="48" font-family="-apple-system, sans-serif" font-size="11" fill="#5b6573">x state  ·  φ representation  ·  J scalar field  ·  T transition  ·  π climb/descend  ·  F feedback / seascape</text>
+
+  <!-- center kernel -->
+  <rect x="355" y="268" width="270" height="96" rx="8" fill="#1a2332"/>
+  <text x="490" y="298" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#fff" font-weight="700">Six-role template</text>
+  <text x="490" y="318" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="10" fill="#d1d5db">Level 2  ·  role equivalence</text>
+  <text x="490" y="336" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="10" fill="#9ca3af">not Level 3  ·  not same math object</text>
+  <text x="490" y="352" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="10" fill="#f3c7a5">specimen: Ding 2019 × Fard 2017</text>
+
+  <!-- cluster 1 fitness -->
+  <rect x="28" y="72" width="300" height="168" rx="10" fill="#d8efe9" stroke="#0f6b5c" stroke-width="1.4" filter="url(#s)"/>
+  <text x="44" y="96" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#0f6b5c" letter-spacing="1.2">CLUSTER 1</text>
+  <text x="44" y="118" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#0b3d35">Sequence → function</text>
+  <text x="44" y="138" font-family="-apple-system, sans-serif" font-size="11" fill="#145c50">fitness landscapes / seascapes</text>
+  <text x="44" y="162" font-family="-apple-system, sans-serif" font-size="11" fill="#1a2332">x  genotype / sequence</text>
+  <text x="44" y="178" font-family="-apple-system, sans-serif" font-size="11" fill="#1a2332">J  fitness, variant effect, T50</text>
+  <text x="44" y="194" font-family="-apple-system, sans-serif" font-size="11" fill="#1a2332">T  mutation, directed evolution, RL</text>
+  <text x="44" y="210" font-family="-apple-system, sans-serif" font-size="11" fill="#1a2332">F  selection; environment / dose</text>
+  <text x="44" y="228" font-family="-apple-system, sans-serif" font-size="10" fill="#0f6b5c">Wright · Ding · DeepSequence · EVE · Mustonen</text>
+
+  <!-- cluster 2 fate -->
+  <rect x="652" y="72" width="300" height="168" rx="10" fill="#f6e4d6" stroke="#8a3b12" stroke-width="1.4" filter="url(#s)"/>
+  <text x="668" y="96" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#8a3b12" letter-spacing="1.2">CLUSTER 2</text>
+  <text x="668" y="118" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#5a2408">Expression → fate</text>
+  <text x="668" y="138" font-family="-apple-system, sans-serif" font-size="11" fill="#8a3b12">Waddington / attractor landscapes</text>
+  <text x="668" y="162" font-family="-apple-system, sans-serif" font-size="11" fill="#1a2332">x  gene-expression pattern</text>
+  <text x="668" y="178" font-family="-apple-system, sans-serif" font-size="11" fill="#1a2332">J  quasi-potential, Hopfield E</text>
+  <text x="668" y="194" font-family="-apple-system, sans-serif" font-size="11" fill="#1a2332">T  GRN ODE, Hopfield, RNA velocity</text>
+  <text x="668" y="210" font-family="-apple-system, sans-serif" font-size="11" fill="#1a2332">F  morphogen, microenvironment</text>
+  <text x="668" y="228" font-family="-apple-system, sans-serif" font-size="10" fill="#8a3b12">Waddington · Huang · Wang · Fard · dynamo · Cislo</text>
+
+  <!-- cluster 3 folding -->
+  <rect x="28" y="400" width="300" height="168" rx="10" fill="#dce6f7" stroke="#2c4a8c" stroke-width="1.4" filter="url(#s)"/>
+  <text x="44" y="424" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#2c4a8c" letter-spacing="1.2">CLUSTER 3</text>
+  <text x="44" y="446" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#1c3264">Conformation → energy</text>
+  <text x="44" y="466" font-family="-apple-system, sans-serif" font-size="11" fill="#2c4a8c">folding funnels / PES</text>
+  <text x="44" y="490" font-family="-apple-system, sans-serif" font-size="11" fill="#1a2332">x  conformation / coordinates</text>
+  <text x="44" y="506" font-family="-apple-system, sans-serif" font-size="11" fill="#1a2332">J  free energy, frustration</text>
+  <text x="44" y="522" font-family="-apple-system, sans-serif" font-size="11" fill="#1a2332">T  Langevin / MD</text>
+  <text x="44" y="538" font-family="-apple-system, sans-serif" font-size="11" fill="#1a2332">F  sequence rewires the funnel</text>
+  <text x="44" y="556" font-family="-apple-system, sans-serif" font-size="10" fill="#2c4a8c">Onuchic–Wolynes · PES · design energy models</text>
+
+  <!-- cluster 4 ML -->
+  <rect x="652" y="400" width="300" height="168" rx="10" fill="#eadcf3" stroke="#5b2d7a" stroke-width="1.4" filter="url(#s)"/>
+  <text x="668" y="424" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#5b2d7a" letter-spacing="1.2">CLUSTER 4</text>
+  <text x="668" y="446" font-family="Georgia, serif" font-size="16" font-weight="700" fill="#3c1b52">Parameters → loss</text>
+  <text x="668" y="466" font-family="-apple-system, sans-serif" font-size="11" fill="#5b2d7a">training / Hopfield / Lyapunov</text>
+  <text x="668" y="490" font-family="-apple-system, sans-serif" font-size="11" fill="#1a2332">x  weights, memories, states</text>
+  <text x="668" y="506" font-family="-apple-system, sans-serif" font-size="11" fill="#1a2332">J  loss, Hopfield energy, Lyapunov</text>
+  <text x="668" y="522" font-family="-apple-system, sans-serif" font-size="11" fill="#1a2332">T  SGD, attractor retrieval</text>
+  <text x="668" y="538" font-family="-apple-system, sans-serif" font-size="11" fill="#1a2332">F  architecture, schedule, data</text>
+  <text x="668" y="556" font-family="-apple-system, sans-serif" font-size="10" fill="#5b2d7a">Hopfield · Li et al. loss viz · modern Hopfield</text>
+
+  <!-- within-cluster ticks to center (gray) -->
+  <path d="M328 156 L355 300" stroke="#9aa3ad" stroke-width="1.2" fill="none" marker-end="url(#arrg)"/>
+  <path d="M652 156 L625 300" stroke="#9aa3ad" stroke-width="1.2" fill="none" marker-end="url(#arrg)"/>
+  <path d="M328 484 L355 364" stroke="#9aa3ad" stroke-width="1.2" fill="none" marker-end="url(#arrg)"/>
+  <path d="M652 484 L625 364" stroke="#9aa3ad" stroke-width="1.2" fill="none" marker-end="url(#arrg)"/>
+
+  <!-- missing transfers (dashed crimson) -->
+  <path d="M328 120 C 490 40, 490 40, 652 120" stroke="#9b1d3a" stroke-width="2" fill="none" stroke-dasharray="6 4" marker-end="url(#arr)"/>
+  <text x="490" y="58" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#9b1d3a">learned J, no T  ↔  explicit T, weak J</text>
+  <text x="490" y="72" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="9" fill="#9b1d3a">Ding / EVE  ↔  dynamo / Cislo / Fard</text>
+
+  <path d="M178 240 L178 400" stroke="#9b1d3a" stroke-width="2" fill="none" stroke-dasharray="6 4" marker-end="url(#arr)"/>
+  <text x="186" y="328" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#9b1d3a">fitness as readout</text>
+  <text x="186" y="342" font-family="-apple-system, sans-serif" font-size="9" fill="#9b1d3a">of folding energy</text>
+
+  <path d="M802 240 L802 400" stroke="#9b1d3a" stroke-width="2" fill="none" stroke-dasharray="6 4" marker-end="url(#arr)"/>
+  <text x="810" y="320" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#9b1d3a">quadratic E → modern</text>
+  <text x="810" y="334" font-family="-apple-system, sans-serif" font-size="9" fill="#9b1d3a">Hopfield capacity / Lyapunov</text>
+
+  <path d="M328 520 C 490 610, 490 610, 652 520" stroke="#9b1d3a" stroke-width="2" fill="none" stroke-dasharray="6 4" marker-end="url(#arr)"/>
+  <text x="490" y="598" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#9b1d3a">funnel geometry  ↔  loss-basin geometry / SGD</text>
+
+  <path d="M328 200 C 400 250, 580 430, 652 470" stroke="#9b1d3a" stroke-width="1.6" fill="none" stroke-dasharray="5 4" marker-end="url(#arr)"/>
+  <text x="430" y="400" font-family="-apple-system, sans-serif" font-size="9" font-weight="700" fill="#9b1d3a">adaptive walk ↔ SGD</text>
+
+  <!-- seascape callout -->
+  <rect x="368" y="196" width="244" height="54" rx="6" fill="#fff5f5" stroke="#9b1d3a" stroke-width="1"/>
+  <text x="490" y="216" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="10" font-weight="700" fill="#9b1d3a">CONTROL u IS SHARED</text>
+  <text x="490" y="232" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="9" fill="#6b1d2c">dose / environment  ↔  morphogen / signal</text>
+  <text x="490" y="246" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="9" fill="#6b1d2c">seascape J(x,u,t)  ·  Eq. 9 target</text>
+</svg>
+<figcaption>
+  <b>Figure.</b> Four substrate clusters instantiate the same six-role template. Gray spokes: each cluster already maps onto the interface. Crimson dashed arrows: missing transfers — the hypotheses a role-based detector should nominate after Ding–Fard. The boxed control variable <i>u</i> is the cheapest unification (Mustonen seascape ↔ morphogen-parameterized Waddington).
+</figcaption>
+</div>
+
+<h2>Missing transfers (what to productize)</h2>
+<div class="xfer"><b>1 → 2.</b> Learned nonparametric <i>J</i> (GP / VAE likelihood / EVE index) grafted onto explicit <i>T</i> from RNA velocity, Hopfield update, or geometric landscape ODEs. Test: do inferred minima of <i>J</i> coincide with fate attractors on a system that has both DMS-like labels and trajectories.</div>
+<div class="xfer"><b>1 ↔ 2 via u.</b> Drug dose and morphogen concentration are the same slot. Resistance seascapes and fate landscapes should share the time-dependent potential, not just the word “landscape.”</div>
+<div class="xfer"><b>1 ↔ 3.</b> Sequence rewires the folding funnel; measured fitness is often a functional of that energy surface. Variant-effect models and frustration maps belong in one object.</div>
+<div class="xfer"><b>2 ↔ 4.</b> Fard’s quadratic Lyapunov energy is the classical Hopfield object. Modern Hopfield capacity and learned Lyapunov certificates are the upgrade path for cell-fate models.</div>
+<div class="xfer"><b>1 ↔ 4.</b> Adaptive walks on empirical fitness surfaces and SGD on loss surfaces are the same local-search-plus-noise template (epistasis ≈ nonconvexity).</div>
+<div class="xfer"><b>3 ↔ 4.</b> Funnel geometry vs loss-basin geometry. Visualization and Hessian tools from deep learning are underused on folding and fitness surfaces.</div>
+
+<h2>15-paper must-cite list, keyed to the six roles</h2>
+<p class="legend">
+  <span><b style="color:#1f6b3a">● strong</b> explicit component</span>
+  <span><b style="color:#b45309">◐ partial</b> present but weak / implicit</span>
+  <span><b style="color:#9aa3ad">○ empty</b> not in the paper</span>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Paper</th>
+      <th>Cluster</th>
+      <th>x state</th>
+      <th>φ repr.</th>
+      <th>J field</th>
+      <th>T step</th>
+      <th>π rule</th>
+      <th>F feedback</th>
+      <th>Why it must be cited</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><b>Wright 1932</b>. Roles of mutation, inbreeding, crossbreeding and selection in evolution. <i>Proc. 6th Int. Congr. Genet.</i></td>
+      <td>1 fitness</td>
+      <td class="strong">●</td>
+      <td class="empty">○</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td>Origin of the fitness-landscape metaphor; adaptive walk + selection as F.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><b>Ding, Zou, Brooks 2019</b>. Latent-space protein fitness. <i>Nat Commun</i> 10:5644. doi:10.1038/s41467-019-13633-0</td>
+      <td>1 fitness</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="weak">◐</td>
+      <td class="weak">◐</td>
+      <td class="weak">◐</td>
+      <td>Worked Model A. VAE φ + GP J. T is only implied (mutation → Δz). No learned dynamics.</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><b>Riesselman, Ingraham, Marks 2018</b>. DeepSequence. <i>Nat Methods</i>. doi:10.1038/s41592-018-0138-4</td>
+      <td>1 fitness</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="empty">○</td>
+      <td class="empty">○</td>
+      <td class="empty">○</td>
+      <td>Generative J from MSA likelihood. Shows Ding is not a one-off VAE-fitness paper.</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><b>Frazer et al. 2021</b>. EVE. <i>Nature</i>. doi:10.1038/s41586-021-04043-8</td>
+      <td>1 fitness</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="empty">○</td>
+      <td class="empty">○</td>
+      <td class="empty">○</td>
+      <td>Production-scale VAE fitness / pathogenicity index. Same slots as DeepSequence, clinical readout.</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><b>Mustonen &amp; Lässig 2009</b>. From fitness landscapes to seascapes. <i>Trends Genet</i>. doi:10.1016/j.tig.2009.01.002</td>
+      <td>1 fitness</td>
+      <td class="strong">●</td>
+      <td class="empty">○</td>
+      <td class="strong">●</td>
+      <td class="weak">◐</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td>Makes F time-dependent: J(x,u,t). This is the control slot shared with morphogen landscapes.</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td><b>Waddington 1957</b>. <i>The Strategy of the Genes</i>. (cite 1957, not only the 2014 reissue)</td>
+      <td>2 fate</td>
+      <td class="strong">●</td>
+      <td class="empty">○</td>
+      <td class="weak">◐</td>
+      <td class="weak">◐</td>
+      <td class="strong">●</td>
+      <td class="weak">◐</td>
+      <td>Source metaphor for cluster 2. J and T are pictorial until later formalisms.</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td><b>Huang et al. 2005</b>. Cell fates as high-dimensional attractors. <i>Phys Rev Lett</i>. doi:10.1103/physrevlett.94.128701</td>
+      <td>2 fate</td>
+      <td class="strong">●</td>
+      <td class="weak">◐</td>
+      <td class="weak">◐</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="weak">◐</td>
+      <td>Converts the metaphor into GRN attractors. Needed so Fard is not treated as the origin.</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td><b>Wang, Zhang, Xu, Wang 2011</b>. Quantifying the Waddington landscape. <i>PNAS</i>. doi:10.1073/pnas.1017017108</td>
+      <td>2 fate</td>
+      <td class="strong">●</td>
+      <td class="weak">◐</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="weak">◐</td>
+      <td>Explicit quasi-potential J plus paths. Closest cluster-2 object to a true potential + dynamics pair.</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td><b>Taherian Fard &amp; Ragan 2017</b>. Attractor landscape of disease progression. <i>Front Genet</i>. doi:10.3389/fgene.2017.00048</td>
+      <td>2 fate</td>
+      <td class="strong">●</td>
+      <td class="weak">◐</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td>Worked Model B. Hopfield T + quadratic E. φ for viz only (PCA). F = stage-wise rewiring of W.</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td><b>Maetschke &amp; Ragan 2016</b>. Hopfield networks for the landscape of cellular development. <i>NPJ Syst Biol Appl</i>. doi:10.1038/npjsba.2016.1</td>
+      <td>2 fate</td>
+      <td class="strong">●</td>
+      <td class="weak">◐</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="weak">◐</td>
+      <td>Shows Fard is one paper in a Hopfield-fate lineage, not a singleton.</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td><b>Qiu et al. 2022</b>. dynamo — transcriptomic vector fields. <i>Cell</i>. doi:10.1016/j.cell.2021.12.045</td>
+      <td>2 fate</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="weak">◐</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="weak">◐</td>
+      <td>Best modern T on expression data (velocity → vector field → attractors / least-action paths). J is reconstructed, not freely learned.</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td><b>Cislo et al. 2025</b>. Reconstructing Waddington’s landscape from data. <i>PNAS</i>. doi:10.1073/pnas.2521762122</td>
+      <td>2 fate</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td>Data-fit geometric landscape; morphogen-dependent family of J. Closest existing object to Eq. 9 on the fate side.</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td><b>Hopfield 1982</b>. Neural networks and physical systems with emergent collective computational abilities. <i>PNAS</i>. doi:10.1073/pnas.79.8.2554</td>
+      <td>4 ML</td>
+      <td class="strong">●</td>
+      <td class="empty">○</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="empty">○</td>
+      <td>Source of the quadratic Lyapunov energy Fard uses. Also the bridge into cluster 4.</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td><b>Onuchic, Luthey-Schulten, Wolynes 1997</b>. Theory of protein folding: the energy landscape perspective. <i>Annu Rev Phys Chem</i> 48:545–600.</td>
+      <td>3 folding</td>
+      <td class="strong">●</td>
+      <td class="weak">◐</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td>Folding funnel. Sequence as F that shapes J. Physical cousin of the fitness surface.</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td><b>Li, Xu, Taylor, Studer, Goldstein 2018</b>. Visualizing the loss landscape of neural nets. <i>NeurIPS</i>. arXiv:1712.09913</td>
+      <td>4 ML</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="strong">●</td>
+      <td class="weak">◐</td>
+      <td>Loss-landscape visualization toolkit. State = weights, T = SGD. Donor of geometry tools to clusters 1–3.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="font-size:14px;color:#5b6573">Role key: <b>x</b> configuration; <b>φ</b> learned or chosen coordinates; <b>J</b> scalar potential / fitness / energy / loss; <b>T</b> explicit update; <b>π</b> ascent or descent; <b>F</b> anything that rewires J or T (selection, signal, sequence, optimizer).</p>
+
+<h2>How to use this in the manuscript</h2>
+<ul>
+  <li>Replace “two papers share no references” as the <i>only</i> surprise with: <i>the interface is common; the citation graph is partitioned by substrate.</i></li>
+  <li>Keep Ding × Fard as the only fully adjudicated Level-2/Level-3 pair.</li>
+  <li>Nominate, do not adjudicate, the next pairs: EVE × dynamo; Mustonen × Cislo (shared u); Fard × modern Hopfield; Ding × neural Lyapunov; DMS adaptive walks × SGD basins.</li>
+  <li>Do not add these 15 as proof that “everyone runs the same algorithm.” The table shows empty and partial slots on purpose.</li>
+</ul>
+
+<div class="foot">
+  Artifact for the landscape-correspondence manuscript. Numbers in the detector (0.71 / 0.26 / 6.5%) are unchanged and still need nulls.
+  Meta-layer citations not in the 15 but should appear in related work: Swanson LBD; Gentner structure-mapping; analogical paper search (purpose–mechanism embeddings).
+</div>
+</div>
+</body>
+</html>

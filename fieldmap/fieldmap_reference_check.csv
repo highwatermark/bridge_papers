@@ -1,0 +1,16 @@
+key,found,claimed_year,year,first_author,author_match,title,venue,doi,oaid,cites,in_corpus
+wright1932,False,1932,,,,,,,,,False
+ding2019,True,2019,2019.0,Xinqiang Ding,True,Deciphering protein evolution and fitness landscapes with latent space models,Nature Communications,10.1038/s41467-019-13633-0,W2995361046,122.0,True
+riesselman2018,True,2018,2018.0,Adam J. Riesselman,True,Deep generative models of genetic variation capture the effects of mutations,Nature Methods,10.1038/s41592-018-0138-4,W2890223884,722.0,False
+frazer2021,True,2021,2021.0,Jonathan Frazer,True,Disease variant prediction with deep generative models of evolutionary data,Nature,10.1038/s41586-021-04043-8,W3209435229,883.0,False
+mustonen2009,True,2009,2009.0,Ville Mustonen,True,From fitness landscapes to seascapes: non-equilibrium dynamics of selection and adaptation,Trends in Genetics,10.1016/j.tig.2009.01.002,W2009868245,265.0,False
+waddington1957,True,1957,2014.0,C.H. Waddington,True,The Strategy of the Genes,,10.4324/9781315765471,W2331030820,1960.0,False
+huang2005,True,2005,2005.0,Sui Huang,True,Cell Fates as High-Dimensional Attractor States of a Complex Gene Regulatory Network,Physical Review Letters,10.1103/physrevlett.94.128701,W2141545875,827.0,False
+wang2011,True,2011,2011.0,Jin Wang,True,Quantifying the Waddington landscape and biological paths for development and differentiat,Proceedings of the National Academy of Sciences,10.1073/pnas.1017017108,W1970779075,560.0,False
+fard2017,True,2017,2017.0,Atefeh Taherian Fard,True,Modeling the Attractor Landscape of Disease Progression: a Network-Based Approach,Frontiers in Genetics,10.3389/fgene.2017.00048,W2606991676,35.0,True
+maetschke2016,True,2016,2016.0,Atefeh Taherian Fard,False,Not just a colourful metaphor: modelling the landscape of cellular development using Hopfi,npj Systems Biology and Applications,10.1038/npjsba.2016.1,W2395347108,43.0,False
+qiu2022,True,2022,2022.0,Xiaojie Qiu,True,Mapping transcriptomic vector fields of single cells,Cell,10.1016/j.cell.2021.12.045,W4210575300,507.0,False
+cislo2025,True,2025,2025.0,Dillon Cislo,True,Reconstructing Waddington’s landscape from data,Proceedings of the National Academy of Sciences,10.1073/pnas.2521762122,W4416965924,10.0,False
+hopfield1982,True,1982,1982.0,J. J. Hopfield,True,Neural networks and physical systems with emergent collective computational abilities.,Proceedings of the National Academy of Sciences,10.1073/pnas.79.8.2554,W2128084896,19586.0,False
+onuchic1997,True,1997,1997.0,José N. Onuchic,True,THEORY OF PROTEIN FOLDING: The Energy Landscape Perspective,Annual Review of Physical Chemistry,10.1146/annurev.physchem.48.1.545,W2158476854,2262.0,False
+li2018,True,2018,2017.0,Hao Li,True,Visualizing the Loss Landscape of Neural Nets,arXiv (Cornell University),10.48550/arxiv.1712.09913,W2777662428,621.0,False

@@ -15,3 +15,5 @@ copy_papers*.sh
 onboarding-profile.md
 .env
 *.key
+# publisher PDFs (copyrighted; local only)
+pdfs/
