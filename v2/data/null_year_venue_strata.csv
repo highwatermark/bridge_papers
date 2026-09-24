@@ -1,0 +1,6 @@
+stratum,n_pairs,prim_mean,concept_mean,share_any_ref,hidden_rate
+all rich pairs,9585,0.7098,0.2594,0.0192,0.0647
+year-matched |Δy|≤2,2915,0.7087,0.2564,0.0316,0.0635
+year-mismatched |Δy|>2,6670,0.7103,0.2607,0.0138,0.0652
+same venue,218,0.7194,0.2793,0.0138,0.0734
+different venue,9367,0.7096,0.259,0.0193,0.0645

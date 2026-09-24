@@ -1,0 +1,4 @@
+set,n_pairs,prim_mean,frac_prim_ge_0.90
+within evolution-ML,9045,0.734,0.134
+within systems-harness,2485,0.762,0.146
+cross-literature,9585,0.71,0.077

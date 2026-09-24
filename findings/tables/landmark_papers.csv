@@ -1,0 +1,37 @@
+paradigm,year,cites,cites_per_year,title,venue,doi
+Protein language models,2021,3146,524.3,Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences,Proceedings of the National Academy of Sciences,10.1073/pnas.2016239118
+Protein language models,2025,613,306.5,Simulating 500 million years of evolution with a language model,Science,10.1126/science.ads0018
+Protein language models,2023,451,112.8,Efficient evolution of human antibodies from general protein language models,Nature Biotechnology,10.1038/s41587-023-01763-2
+Protein language models,2024,194,64.7,Fine-tuning protein language models boosts predictions across diverse tasks,Nature Communications,10.1038/s41467-024-51844-2
+Genomic foundation models,2021,1296,216.0,Effective gene expression prediction from sequence by integrating long-range interactions,Nature Methods,10.1038/s41592-021-01252-x
+Genomic foundation models,2024,431,143.7,Sequence modeling and design from molecular to genome scale with Evo,Science,10.1126/science.ado9336
+Genomic foundation models,2025,98,49.0,A foundation model of transcription across human cell types,Nature,10.1038/s41586-024-08391-z
+Genomic foundation models,2018,403,44.8,The Value of Expanding the Training Population to Improve Genomic Selection Models in Tetraploid Potato,Frontiers in Plant Science,10.3389/fpls.2018.01118
+Structure prediction (evo-coupling based),2024,14011,4670.3,Accurate structure prediction of biomolecular interactions with AlphaFold 3,Nature,10.1038/s41586-024-07487-w
+Structure prediction (evo-coupling based),2023,4951,1237.8,Evolutionary-scale prediction of atomic-level protein structure with a language model,Science,10.1126/science.ade2574
+Structure prediction (evo-coupling based),2022,1873,374.6,Robust deep learning–based protein sequence design using ProteinMPNN,Science,10.1126/science.add2187
+Structure prediction (evo-coupling based),2023,441,110.2,Using evolutionary data to make sense of macromolecules with a “face‐lifted” ConSurf,Protein Science,10.1002/pro.4582
+Generative sequence/structure design,2023,966,241.5,"Deep learning modelling techniques: current progress, applications, advantages, and challenges",Artificial Intelligence Review,10.1007/s10462-023-10466-8
+Generative sequence/structure design,2024,307,102.3,"Improving Protein Expression, Stability, and Function with ProteinMPNN",Journal of the American Chemical Society,10.1021/jacs.3c10941
+Generative sequence/structure design,2023,353,88.2,Mathematical discoveries from program search with large language models,Nature,10.1038/s41586-023-06924-6
+Generative sequence/structure design,2021,350,58.3,Protein design and variant prediction using autoregressive generative models,Nature Communications,10.1038/s41467-021-22732-w
+ML-guided directed evolution,2025,103,51.5,Accelerated enzyme engineering by machine-learning guided cell-free expression,Nature Communications,10.1038/s41467-024-55399-0
+ML-guided directed evolution,2023,176,44.0,Rapid protein stability prediction using deep learning representations,eLife,10.7554/elife.82593
+ML-guided directed evolution,2020,278,39.7,Combining mechanistic and machine learning models for predictive engineering and optimization of tryptophan metabolism,Nature Communications,10.1038/s41467-020-17910-1
+ML-guided directed evolution,2018,349,38.8,Learned protein embeddings for machine learning,Bioinformatics,10.1093/bioinformatics/bty178
+Fitness-landscape learning,2024,408,136.0,"CADD v1.7: using protein language models, regulatory CNNs and other nucleotide-level scores to improve genome-wide variant predictions",Nucleic Acids Research,10.1093/nar/gkad989
+Fitness-landscape learning,2018,408,45.3,A population genetic interpretation of GWAS findings for human quantitative traits,PLoS Biology,10.1371/journal.pbio.2002985
+Fitness-landscape learning,2018,310,34.4,Inferring the shape of global epistasis,Proceedings of the National Academy of Sciences,10.1073/pnas.1804015115
+Fitness-landscape learning,2020,229,32.7,Deep learning versus parametric and ensemble methods for genomic prediction of complex phenotypes,Genetics Selection Evolution,10.1186/s12711-020-00531-z
+Evolutionary forecasting,2020,360,51.4,Evolutionary genomics can improve prediction of species’ responses to climate change,Evolution Letters,10.1002/evl3.154
+Evolutionary forecasting,2021,213,35.5,Accelerating phase-field-based microstructure evolution predictions via surrogate models trained by machine learning methods,npj Computational Materials,10.1038/s41524-020-00471-8
+Evolutionary forecasting,2021,166,27.7,Genetic and environmental modulation of transposition shapes the evolutionary potential of Arabidopsis thaliana,Genome biology,10.1186/s13059-021-02348-5
+Evolutionary forecasting,2023,92,23.0,Population immunity predicts evolutionary trajectories of SARS-CoV-2,Cell,10.1016/j.cell.2023.09.022
+ML phylogenetics/ancestral,2020,499,71.3,Unambiguous identification of fungi: where do we stand and how accurate and precise is fungal DNA barcoding?,IMA Fungus,10.1186/s43008-020-00033-z
+ML phylogenetics/ancestral,2023,269,67.2,Evolutionary constraint and innovation across hundreds of placental mammals,Science,10.1126/science.abn3943
+ML phylogenetics/ancestral,2017,567,56.7,Protein interface prediction using graph convolutional networks,Digital Collections of Colorado (Colorado State University),10.25675/3.021826
+ML phylogenetics/ancestral,2020,361,51.6,RETRACTED ARTICLE: Origin and cross-species transmission of bat coronaviruses in China,Nature Communications,10.1038/s41467-020-17687-3
+Evolution-as-search (EC/open-ended),2022,389,77.8,A Survey on Evolutionary Constrained Multiobjective Optimization,IEEE Transactions on Evolutionary Computation,10.1109/tevc.2022.3155533
+Evolution-as-search (EC/open-ended),2018,658,73.1,Data-Driven Evolutionary Optimization: An Overview and Case Studies,IEEE Transactions on Evolutionary Computation,10.1109/tevc.2018.2869001
+Evolution-as-search (EC/open-ended),2021,394,65.7,A survey on evolutionary computation for complex continuous optimization,Artificial Intelligence Review,10.1007/s10462-021-10042-y
+Evolution-as-search (EC/open-ended),2020,299,42.7,Solving Large-Scale Multiobjective Optimization Problems With Sparse Optimal Solutions via Unsupervised Neural Networks,IEEE Transactions on Cybernetics,10.1109/tcyb.2020.2979930

@@ -1,0 +1,8 @@
+module,evoML_%,sysBio_%,dominant,gap
+M1 Observe / ingest,27.1,34.3,systems-bio,-7.2
+M2 Harness operator H,6.7,47.4,systems-bio,-40.7
+M3 Pressure / objective,28.6,11.7,evolution-ML,16.9
+M4 Evolutionary search,38.7,10.9,evolution-ML,27.8
+M5 Program representation,20.0,6.9,evolution-ML,13.1
+M6 Capability prediction,46.6,39.7,evolution-ML,6.9
+M7 Validate / feedback,19.3,21.2,systems-bio,-1.9

@@ -1,0 +1,13 @@
+# precision-study blinding key — keep out of the repo until labelling is complete
+v2/rater_kit/rater_key_N150_DO_NOT_SHARE.csv
+*DO_NOT_SHARE*
+# local copy scripts (absolute paths into app storage on one machine)
+copy_papers*.sh
+# LaTeX build products
+*.aux
+*.log
+*.bbl
+*.blg
+*.out
+*.pdf
+.DS_Store

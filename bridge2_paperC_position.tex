@@ -1,0 +1,296 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,graphicx,booktabs,natbib,microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+\bibliographystyle{unsrtnat}
+\setlength{\parskip}{0.35em}
+\renewcommand{\abstractname}{Abstract}
+
+\title{\bfseries The same computation, twice: shared algorithmic structure\\
+\large across literatures that do not cite each other}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\vspace{-2.2em}
+\begin{abstract}
+Disconnected scientific literatures can converge on the same computation while sharing no vocabulary and no citations. We argue that this is common rather than exceptional, that it is measurable, and that the resulting correspondences are a source of testable hypotheses. Across a $522$-paper corpus spanning machine-learning models of evolution and systems-biology models of cellular state transitions, cross-literature pairs are similar in computation (mean $0.71$), dissimilar in language (mean $0.26$), and essentially disjoint in citations (mean Jaccard $0.0002$; $1.9\%$ share any reference); computational and semantic similarity are uncorrelated ($\rho=0.02$). We develop the argument through one worked example --- a latent-space model of protein fitness and a Hopfield attractor model of disease progression --- distinguishing three levels of equivalence and showing that the pair is equivalent in algorithmic role but not in mathematical object. That gap, rather than the similarity, is what generates the experiment neither field would propose alone.
+\end{abstract}
+
+\section{The problem}
+Scientific fields partition by object of study, not by the mathematics they use. Two communities can therefore
+spend decades building the same model of different substrates without recognising it, because the recognition would
+require reading each other's papers --- and nothing in the citation graph, the keywords, or the venue list suggests
+they should. When this happens, each field is missing what the other has already solved.
+
+We claim this situation is measurable, and common. It is measurable because ``performing the same computation'' and
+``using the same words'' are distinct properties that can be scored separately. It is common because, in the corpus
+we examine, the two properties are essentially uncorrelated.
+
+\section{Measuring the gap}\label{sec:methods}
+
+The pair analysed above was not chosen by hand. It was surfaced by a procedure that measures, for every
+cross-literature pair of papers in a corpus, three quantities that are usually conflated.
+
+\subsection{Corpus}
+We assembled a corpus of $522$ papers spanning two literatures: $404$ papers on machine learning applied to
+evolution (protein and genomic language models, directed evolution, fitness-landscape inference, phylogenetics,
+evolutionary computation) and $118$ papers on biological state transitions (gene-regulatory attractors, cell-fate
+decisions, bistability, plasticity). Records were retrieved from OpenAlex and filtered by a keyword-rule classifier;
+the classification is noisy per paper but stable in aggregate.
+
+\subsection{Three similarity spaces}
+For each cross-literature pair $(a,b)$ we compute:
+\begin{description}
+\item[Primitive (computational) similarity.] Each abstract is scored for six computational roles --- \textsc{state},
+\textsc{transition operator}, \textsc{objective}, \textsc{search}, \textsc{representation}, \textsc{feedback} ---
+by term counts over role-specific vocabularies drawn from both literatures. Counts are square-root transformed and
+$\ell_2$-normalised, and similarity is the cosine of the resulting six-vectors. This measures \emph{what computation
+the paper performs}.
+\item[Concept (semantic) similarity.] Title and abstract are embedded with a sentence-transformer into a $384$-
+dimensional space; similarity is cosine. This measures \emph{what language the paper uses}.
+\item[Citation distance.] The Jaccard overlap of the two papers' reference lists, plus a check for direct citation.
+This measures \emph{whether the two literatures are in contact}.
+\end{description}
+
+\subsection{The three spaces disagree}
+On the subset of papers whose abstracts express at least four of the six roles, cross-literature pairs have mean
+primitive similarity $0.71$, mean concept similarity $0.26$, and mean citation (Jaccard) similarity $0.0002$, with
+only $1.9\%$ of pairs sharing any reference at all. Primitive and concept similarity are essentially uncorrelated
+(Spearman $\rho=0.02$). The three views therefore measure different things, and a pair can score high on one and low
+on another.
+
+\subsection{Hidden bridges and false friends}
+This yields a two-by-two classification. Pairs high in \emph{both} computation and language are obvious
+correspondences. Pairs high in computation but \emph{low} in language ($6.5\%$ of rich cross-literature pairs) are
+\emph{hidden bridges}: the same algorithm described in mutually alien vocabulary --- the category the present paper's
+subject belongs to. Pairs high in language but low in computation ($8.9\%$) are \emph{false friends}: they should be
+rejected, and Figure~\ref{fig:controls} verifies that the six-role mapping rejects them.
+
+The procedure is a \emph{detector}, not a proof: it nominates candidates whose equivalence must then be adjudicated
+by reading the models, as in Sections~\ref{sec:levels} and following. Its precision is what the negative controls
+establish; its recall is not characterised here.
+
+\section{A worked example}
+The argument is only as good as its strongest instance, so we develop one in full: \citet{ding2019latent}, who learn
+a protein fitness landscape in a variational-autoencoder latent space, and \citet{fard2017attractor}, who model
+disease progression as descent on a Hopfield attractor landscape. The two share no references.
+
+\subsection{Model A: a latent-space model of protein fitness}
+\citet{ding2019latent} learn a latent representation of a protein family and fit a scalar fitness surface over it.
+A sequence $x$ (one-hot over the columns of a multiple sequence alignment) is encoded by a variational autoencoder
+\citep{kingma2014vae} with encoder $q_\phi(z\mid x)$ and decoder $p_\theta(x\mid z)$, trained by maximising the
+evidence lower bound
+\begin{equation}
+\mathrm{ELBO}(\theta,\phi)=\mathbb{E}_{q_\phi(z\mid x)}\!\left[\log p_\theta(x\mid z)\right]
+-\mathrm{KL}\!\left(q_\phi(z\mid x)\,\|\,p_\theta(z)\right),
+\qquad p_\theta(z)=\mathcal{N}(0,I).
+\label{eq:elbo}
+\end{equation}
+The first term is reconstruction from the latent code; the second regularises the posterior toward the prior.
+Writing $z=\phi(x)$ for the (two-dimensional) encoding, experimental fitness or stability labels are then regressed
+onto $z$ by Gaussian-process regression \citep{rasmussen2006gp} with a radial-basis kernel,
+\begin{equation}
+J(x) \;=\; f\!\left(\phi(x)\right), \qquad f \sim \mathcal{GP}\!\left(m(\cdot),\,k_{\mathrm{RBF}}(\cdot,\cdot)\right).
+\label{eq:gp}
+\end{equation}
+This yields a continuous scalar field over the latent space. Mutations displace $x$ and therefore $z$; an adaptive
+walk is ascent on $J$.
+
+\subsection{Model B: an attractor-landscape model of disease progression}
+\citet{fard2017attractor}, explicitly invoking Waddington's epigenetic landscape \citep{waddington1957strategy} and the
+attractor view of cell fate \citep{huang2005cellfates,huang2009cancer}, represent a cell by a gene-expression pattern
+$P$ and build a Hopfield network \citep{hopfield1982neural} whose symmetric weight matrix is the gene--gene
+correlation,
+\begin{equation}
+W_{ij} = \mathrm{PCC}(i,j), \qquad W_{ii}=0 .
+\label{eq:W}
+\end{equation}
+The dynamics are the discrete Hopfield update
+\begin{equation}
+P(t+1) = \mathrm{sgn}\!\left(P(t)\,W\right),
+\label{eq:update}
+\end{equation}
+and the associated Lyapunov energy, which decreases monotonically under \eqref{eq:update}, is
+\begin{equation}
+E[P] = -\tfrac{1}{2}\,P\,W\,P^{\top}.
+\label{eq:energy}
+\end{equation}
+Attractors are local minima of \eqref{eq:energy} and correspond to normal and disease cell states; disease
+progression is the trajectory converging to an attractor. The landscape is visualised by interpolating $E$ over the
+first two principal components of the expression data.
+
+\subsection{A shared formal template}
+
+Both models can be written in a common six-slot template. Let $x\in\mathcal{S}$ be the system state, $z=\phi(x)$ a
+learned or fixed representation, $J$ a scalar field, $T$ a transition operator with control input $u$, $\pi$ a
+trajectory rule, and $F$ a feedback term:
+\begin{align}
+x_t &\in \mathcal{S}, &
+z &= \phi(x), &
+J&:\mathcal{S}\rightarrow\mathbb{R}, \label{eq:tmpl1}\\
+x_{t+1} &= T(x_t,u_t), &
+\pi &= \text{trajectory rule on } J, &
+F &= \text{feedback / selection}. \label{eq:tmpl2}
+\end{align}
+Table~\ref{tab:template} instantiates the template for both papers. Every slot is filled on both sides by a
+substantive, non-trivial component --- not by a re-description. This is the sense in which the two literatures have
+independently built the same algorithm.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}p{0.16\textwidth}p{0.36\textwidth}p{0.38\textwidth}@{}}
+\toprule
+\textbf{Role} & \textbf{Model A: protein fitness} \citep{ding2019latent} & \textbf{Model B: disease attractors} \citep{fard2017attractor} \\
+\midrule
+$x\in\mathcal{S}$ & protein sequence (one-hot over MSA) & gene-expression pattern $P$ \\
+$z=\phi(x)$ & VAE encoder $q_\phi(z\mid x)$, 2-D latent & Hopfield state on correlation matrix $W$ \\
+$J(x)$ & GP surface $f(z)$, RBF kernel & $E[P]=-\tfrac12 PWP^{\top}$ \\
+$x_{t+1}=T(x_t,u_t)$ & mutation $\rightarrow$ displacement $\Delta z$ & $P(t{+}1)=\mathrm{sgn}(P(t)W)$ \\
+$\pi$ & adaptive walk: ascent on $J$ & convergence to attractor: descent on $E$ \\
+$F$ & selection re-weights the population & microenvironment rewires $W$ across stages \\
+\bottomrule
+\end{tabular}
+\caption{The same six computational roles, instantiated by two papers that share no references.
+The \textsc{objective} row is load-bearing: it is where the correspondence is tightest at the level of role,
+and where it breaks at the level of mathematical object (Section~\ref{sec:levels}).}
+\label{tab:template}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.82\textwidth]{{{artifact:art_db13018b-265d-4d39-976c-d08e1381d3c8}}}
+\caption{Two disconnected models populate the same six-role template. Left: the latent-space fitness model of
+\citet{ding2019latent}. Right: the Hopfield attractor model of \citet{fard2017attractor}. Centre: the shared role.
+The \textsc{objective} row is highlighted as the load-bearing correspondence.}
+\label{fig:template}
+\end{figure}
+
+\section{Three levels of equivalence}\label{sec:levels}
+
+Claims that two models are ``the same'' conflate three distinct assertions, which we separate:
+
+\paragraph{Level 1 --- shared vocabulary.} Both use the words \emph{landscape}, \emph{state}, and
+\emph{trajectory}. This holds trivially and carries no content: the terms are metaphors in wide circulation.
+
+\paragraph{Level 2 --- shared algorithmic role structure.} Both fit a scalar field over a representation of state
+and interpret dynamics as motion on that field toward extrema that are the biologically meaningful configurations.
+Each of the six roles in \eqref{eq:tmpl1}--\eqref{eq:tmpl2} is occupied on both sides. \textbf{This holds}, and it is
+the substantive claim of this paper.
+
+\paragraph{Level 3 --- same mathematical object.} \textbf{This fails.} The fitness surface \eqref{eq:gp} is a
+Gaussian process: a nonparametric prior over functions that can represent an arbitrary smooth multi-well surface.
+The attractor energy \eqref{eq:energy} is a \emph{fixed quadratic form} determined entirely by the single matrix $W$.
+A quadratic form has one stationary structure --- its curvature is constant and set by the eigenvalues of $W$ --- so
+it cannot represent two separated minima with a barrier between them without additional machinery. The two are the
+same \emph{type} of construct (a scalar potential over a state representation) but not the same object.
+
+\section{The benchmark, and why the gap is the point}
+
+To make the Level-3 distinction quantitative rather than rhetorical, we constructed a ground-truth landscape with a
+known number of attractors and fit both formalisms to data drawn from it. The generating potential is a coupled
+double well on a two-dimensional state $s=(s_1,s_2)$,
+\begin{equation}
+U(s) = (s_1^2-1)^2 + (s_2^2-1)^2 - 0.6\,s_1 s_2 ,
+\label{eq:doublewell}
+\end{equation}
+which has two dominant basins (a ``normal'' basin near $(-1,-1)$ and a ``disease'' basin near $(+1,+1)$).
+We drew $150$ samples near each basin for the Hopfield route, and $220$ scattered labelled points for the
+Gaussian-process route, and fit each model by its own paper's procedure: for Model A, GP regression of the scalar
+label on the state; for Model B, the correlation weight matrix \eqref{eq:W} and energy \eqref{eq:energy}.
+
+Agreement with the ground truth was measured by Spearman rank correlation over a $70\times70$ grid, and basin
+structure by counting interior local minima. The Gaussian-process surface reproduced the generating potential
+exactly in rank order ($\rho=1.00$) and recovered all four local minima. The Hopfield energy achieved
+$\rho=0.34$ and recovered \emph{zero} interior minima: the quadratic form collapses the double well into a single
+saddle (Figure~\ref{fig:synthetic}). The failure is structural, not a matter of sample size or tuning.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{{{artifact:art_20ca702b-27ae-4575-a42a-c171e49cb7f5}}}
+\caption{Synthetic benchmark separating Level 2 from Level 3. (a) The generating double-well potential
+\eqref{eq:doublewell}, with two dominant basins by construction. (b) The Gaussian-process surface fit by Model A's
+procedure recovers it (Spearman $\rho=1.00$; four interior minima). (c) The Hopfield energy \eqref{eq:energy} fit by
+Model B's procedure does not ($\rho=0.34$; zero interior minima); overlaid points are the ``normal'' (white) and
+``disease'' (red) samples. Both panels are fit to data from the same generating potential; the difference is
+representational capacity, not sample size.}
+\label{fig:synthetic}
+\end{figure}
+
+\begin{enumerate}
+\item \textbf{Equilibrium versus trajectory.} Model A fits a \emph{static} surface to a population assumed at or near
+equilibrium; Model B is a \emph{dynamical} system with an explicit time update but no learned surface shape. Neither
+model does both. The learning sits on opposite sides: Model A learns the representation and fixes the objective
+family; Model B fixes the representation and reads the objective off it.
+\item \textbf{Representational capacity.} As shown above, GP versus quadratic form. Any translation that treats the
+two potentials as interchangeable will over-claim.
+\item \textbf{Meaning of the latent coordinate.} Model A's $z$ is \emph{learned} by the VAE; Model B's coordinates are
+a \emph{fixed} principal-component basis used only for visualisation, with the dynamics running in the full state
+space. Equating the two axes is a category error.
+\item \textbf{Sign convention.} Fitness is maximised, energy minimised. The flip is trivial but must be stated: on our
+synthetic benchmark, comparing the two fields without aligning sign yields a spurious negative correlation
+($\rho=-0.34$, versus $+0.34$ once aligned).
+\end{enumerate}
+
+
+The Level-3 gap is not a defect of the correspondence; it is its most useful output, because it specifies what a
+unified model must contain. Model A supplies a \emph{learned} scalar field of arbitrary shape but no dynamics;
+Model B supplies \emph{explicit dynamics} but a scalar field of fixed, inadequate capacity. The unification is
+therefore a single object with both properties: a learned potential $J_\psi$ (Gaussian process, normalising flow, or
+neural potential) equipped with an explicit transition operator,
+\begin{equation}
+x_{t+1} = T\!\left(x_t,u_t\right) = x_t - \eta \,\nabla J_\psi(x_t) + \sigma\,\xi_t ,
+\label{eq:unified}
+\end{equation}
+with $u_t$ the environmental or perturbation input, $\xi_t$ noise, and $J_\psi$ fit jointly to fitness-like labels
+and to observed state trajectories. Because $J_\psi$ is allowed to depend on time or on $u$, the resulting object is
+a \emph{seascape} rather than a landscape in the sense of \citet{mustonen2009seascapes}, and it inherits the
+attractor semantics of \citet{wang2011waddington}. The experiment this implies is concrete: fit
+\eqref{eq:unified} to a system for which both longitudinal deep-mutational-scanning data and expression-state
+trajectories exist, and test whether the inferred minima of $J_\psi$ coincide with the attractors recovered by the
+Hopfield route.
+
+\section{The procedure must also reject}
+
+A correspondence procedure is only informative if it also rejects. We therefore applied the same six-role mapping to
+three \emph{false-friend} pairs drawn from the same corpus: cross-literature pairs with \emph{high} semantic
+similarity but low similarity in computational role. In each case the dominant role differs between the two papers,
+and the mapping rejects the pair (Figure~\ref{fig:controls}):
+\begin{itemize}
+\item \textsc{objective} versus \textsc{state} (semantic similarity $0.76$, role similarity $0.24$): a generative model
+of single-cell time series against a cell-fate classifier --- one fits a probability flow, the other locates a state.
+\item \textsc{state} versus \textsc{representation} (semantic $0.63$, role $0.00$): sequence-to-expression prediction
+against transfer-entropy network reconstruction --- one is a readout, the other builds a network.
+\item \textsc{representation} versus \textsc{search} (semantic $0.65$, role $0.23$): static binding-affinity prediction
+against learning pathway dynamics --- one is static, the other dynamical.
+\end{itemize}
+All three have \emph{higher} surface similarity than the accepted pair, and all three are rejected. The procedure is
+therefore not matching on vocabulary.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.86\textwidth]{{{artifact:art_5d6b2111-eb59-4e09-bd86-257df6b883f8}}}
+\caption{Negative controls. Three cross-literature pairs with high semantic (concept-embedding) similarity but
+mismatched dominant computational role. All three exceed the accepted pair in surface similarity, and all three are
+rejected by the six-role mapping. $n=3$ pairs drawn from the same 522-paper corpus; the zero-height bar is stubbed
+for visibility.}
+\label{fig:controls}
+\end{figure}
+
+\section{Implications}
+If computational correspondence and semantic similarity are uncorrelated, then reading by topic --- which is how
+literature search works --- systematically misses correspondences of exactly this kind. The consequence is not that
+fields should merge, but that a second index over the literature, organised by computational role rather than by
+subject, would surface hypotheses that no amount of within-field reading produces. The worked example above is one
+such hypothesis: it exists only because two papers that will never cite each other were placed in the same template.
+
+The honest caveats are three. The detector's recall is uncharacterised. The role scoring is a hand-built,
+interpretable keyword grammar, not a learned model. And the benchmark that separates Level 2 from Level 3 is
+synthetic --- it demonstrates a difference in representational capacity, not its biological consequence.
+
+\bibliography{bridge2_references}
+\end{document}

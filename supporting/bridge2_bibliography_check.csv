@@ -1,0 +1,13 @@
+bibkey,year,first_author,title,venue,doi,openalex,verified
+ding2019latent,2019,Xinqiang Ding,Deciphering protein evolution and fitness landscapes with latent space models,Nature Communications,10.1038/s41467-019-13633-0,https://openalex.org/W2995361046,yes
+fard2017attractor,2017,Atefeh Taherian Fard,Modeling the Attractor Landscape of Disease Progression: a Network-Based Approach,Frontiers in Genetics,10.3389/fgene.2017.00048,https://openalex.org/W2606991676,yes
+hopfield1982neural,1982,J. J. Hopfield,Neural networks and physical systems with emergent collective computational abilities.,Proceedings of the National Academy of Sciences,10.1073/pnas.79.8.2554,https://openalex.org/W2128084896,yes
+huang2005cellfates,2005,Sui Huang,Cell Fates as High-Dimensional Attractor States of a Complex Gene Regulatory Network,Physical Review Letters,10.1103/physrevlett.94.128701,https://openalex.org/W2141545875,yes
+huang2009cancer,2009,Sui Huang,Cancer attractors: A systems view of tumors from a gene network dynamics and developmental perspective,Seminars in Cell and Developmental Biology,10.1016/j.semcdb.2009.07.003,https://openalex.org/W2167031279,yes
+kingma2014vae,2013,Diederik P. Kingma,Auto-Encoding Variational Bayes,UvA-DARE (University of Amsterdam),10.48550/arxiv.1312.6114,https://openalex.org/W1959608418,yes
+riesselman2018deepseq,2018,Adam J. Riesselman,Deep generative models of genetic variation capture the effects of mutations,Nature Methods,10.1038/s41592-018-0138-4,https://openalex.org/W2890223884,yes
+rives2021esm,2021,Alexander Rives,Biological structure and function emerge from scaling unsupervised learning to 250 million protein sequences,Proceedings of the National Academy of Sciences,10.1073/pnas.2016239118,https://openalex.org/W3146944767,yes
+waddington1957strategy,2014,C.H. Waddington,The Strategy of the Genes,Routledge (2014 reissue of 1957 ed.),10.4324/9781315765471,https://openalex.org/W2331030820,yes
+mustonen2009seascapes,2009,Ville Mustonen,From fitness landscapes to seascapes: non-equilibrium dynamics of selection and adaptation,Trends in Genetics,10.1016/j.tig.2009.01.002,https://openalex.org/W2009868245,yes
+rasmussen2006gp,2005,Carl Edward Rasmussen,Gaussian Processes for Machine Learning,The MIT Press eBooks,10.7551/mitpress/3206.001.0001,https://openalex.org/W1746819321,yes
+wang2011waddington,2011,Jin Wang,Quantifying the Waddington landscape and biological paths for development and differentiation,Proceedings of the National Academy of Sciences,10.1073/pnas.1017017108,https://openalex.org/W1970779075,yes

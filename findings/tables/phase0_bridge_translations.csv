@@ -1,0 +1,19 @@
+bridge,role,evolution_ML_reads_it_as,systems_harness_reads_it_as
+Bridge 1,STATE,protein sequence as a point in learned embedding space,cell as a point in high-dimensional expression state space
+Bridge 1,TRANSITION_OPERATOR,local mutational moves → embedding displacement,signaling/noise → displacement across the critical boundary
+Bridge 1,OBJECTIVE,likelihood gradient of the language model (evolutionary velocity field),potential/stability gradient defining the attractor basin
+Bridge 1,SEARCH,predicted evolutionary trajectory along the velocity field,cell-fate trajectory through the critical transition
+Bridge 1,REPRESENTATION,protein language-model embedding,low-dimensional critical-state manifold
+Bridge 1,FEEDBACK,selection filters realized substitutions,developmental signal commits the fate decision
+Bridge 2,STATE,genotype embedded in a latent fitness coordinate,molecular network state embedded in a latent disease coordinate
+Bridge 2,TRANSITION_OPERATOR,mutation moves genotype on the fitness surface,regulatory perturbation moves the network between attractors
+Bridge 2,OBJECTIVE,scalar fitness as height of the latent surface,scalar potential / attractor depth of the disease landscape
+Bridge 2,SEARCH,adaptive walk = ascent on the fitness surface,disease progression = descent between attractor basins
+Bridge 2,REPRESENTATION,latent-variable model of the fitness landscape,network-inferred potential landscape
+Bridge 2,FEEDBACK,selection re-weights the population on the surface,microenvironment reshapes attractor depths over time
+Bridge 3,STATE,DNA/regulatory sequence context,gene-expression state defining cell identity
+Bridge 3,TRANSITION_OPERATOR,sequence edit → predicted regulatory-activity change,in-silico TF perturbation → predicted state change
+Bridge 3,OBJECTIVE,model likelihood of regulatory element given species context,identity score / GRN consistency of the cell state
+Bridge 3,SEARCH,scan sequence variants for regulatory effect,scan perturbations for fate-reprogramming effect
+Bridge 3,REPRESENTATION,DNA language-model embedding of regulatory grammar,inferred gene regulatory network
+Bridge 3,FEEDBACK,cross-species conservation constrains the grammar,perturbation outcome validates/updates the GRN

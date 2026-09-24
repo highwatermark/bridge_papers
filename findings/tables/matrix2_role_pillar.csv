@@ -1,0 +1,7 @@
+role,evo_term,harness_term,evo_coverage,harness_coverage,cross_pillar_role_sim,emphasis
+STATE,genotype / sequence,cell state / attractor,0.56,0.54,0.173,shared
+TRANSITION_OPERATOR,mutation / variation operator,signal-induced transition,0.33,0.72,0.169,systems-harness
+OBJECTIVE,fitness landscape,epigenetic / potential landscape,0.38,0.39,0.154,shared
+SEARCH,evolutionary / directed search,trajectory through state space,0.35,0.2,0.031,evolution-ML
+REPRESENTATION,embedding / foundation model,gene regulatory network,0.26,0.44,0.074,systems-harness
+FEEDBACK,selection over generations,environmental signal / stimulus,0.38,0.51,0.076,systems-harness

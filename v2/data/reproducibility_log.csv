@@ -1,0 +1,18 @@
+claim,published,reproduced,status
+rich papers evo x harness,135 x 71,135 x 71,REPRODUCED
+rich cross-literature pairs,9585,9585,REPRODUCED
+primitive mean (rich),0.71,0.71,REPRODUCED
+concept mean (rich),0.259,0.259,REPRODUCED
+citation mean Jaccard (rich),0.0002,0.0002,REPRODUCED
+fraction sharing any reference (rich),0.019,0.019,REPRODUCED
+Spearman primitive vs concept,0.018,0.018,REPRODUCED
+both-high pairs,109,109,REPRODUCED
+"hidden-bridge pairs (prim>=0.90, concept<P90)",627,627,REPRODUCED
+"false-friend pairs (concept>=P90, prim<0.90)",850,850,REPRODUCED
+seed bridges (both-high & zero cit),96,96,REPRODUCED
+prim>0.90 pairs,736,736,REPRODUCED
+prim>0.90 & zero citation,716,716,REPRODUCED
+full-corpus cross pairs,47672,47672,REPRODUCED
+"full-corpus primitive mean (unit-norm, no sqrt)",0.468,0.468,REPRODUCED
+full-corpus share any reference,0.0237,0.0237,REPRODUCED
+hidden-bridge pairs WITH zero-citation condition (as described in prose),627 (6.5%) — mis-described,620 (6.5%),DEFINITION CORRECTED

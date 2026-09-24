@@ -1,0 +1,82 @@
+role	literature	term
+STATE	evolution-ML	genotype
+STATE	evolution-ML	sequence
+STATE	evolution-ML	variant
+STATE	evolution-ML	genome
+STATE	evolution-ML	allele
+STATE	evolution-ML	protein
+STATE	evolution-ML	population state
+STATE	systems-harness	cell state
+STATE	systems-harness	expression state
+STATE	systems-harness	phenotype state
+STATE	systems-harness	attractor
+STATE	systems-harness	stable state
+STATE	systems-harness	cell type
+STATE	systems-harness	configuration
+TRANSITION_OPERATOR	evolution-ML	mutation
+TRANSITION_OPERATOR	evolution-ML	recombination
+TRANSITION_OPERATOR	evolution-ML	variation operator
+TRANSITION_OPERATOR	evolution-ML	substitution
+TRANSITION_OPERATOR	evolution-ML	genetic operator
+TRANSITION_OPERATOR	evolution-ML	crossover
+TRANSITION_OPERATOR	systems-harness	state transition
+TRANSITION_OPERATOR	systems-harness	cell fate transition
+TRANSITION_OPERATOR	systems-harness	reprogramming
+TRANSITION_OPERATOR	systems-harness	differentiation
+TRANSITION_OPERATOR	systems-harness	signal-induced
+TRANSITION_OPERATOR	systems-harness	perturbation response
+TRANSITION_OPERATOR	systems-harness	switch
+OBJECTIVE	evolution-ML	fitness
+OBJECTIVE	evolution-ML	selection
+OBJECTIVE	evolution-ML	fitness landscape
+OBJECTIVE	evolution-ML	adaptive
+OBJECTIVE	evolution-ML	objective
+OBJECTIVE	evolution-ML	selective pressure
+OBJECTIVE	systems-harness	attractor stability
+OBJECTIVE	systems-harness	robustness
+OBJECTIVE	systems-harness	canalization
+OBJECTIVE	systems-harness	landscape
+OBJECTIVE	systems-harness	potential
+OBJECTIVE	systems-harness	stability
+OBJECTIVE	systems-harness	optimal response
+SEARCH	evolution-ML	evolutionary search
+SEARCH	evolution-ML	directed evolution
+SEARCH	evolution-ML	optimization
+SEARCH	evolution-ML	genetic algorithm
+SEARCH	evolution-ML	exploration
+SEARCH	evolution-ML	evolve
+SEARCH	systems-harness	trajectory
+SEARCH	systems-harness	dynamics
+SEARCH	systems-harness	navigation
+SEARCH	systems-harness	path
+SEARCH	systems-harness	flow
+SEARCH	systems-harness	dynamical
+SEARCH	systems-harness	evolve toward
+REPRESENTATION	evolution-ML	embedding
+REPRESENTATION	evolution-ML	language model
+REPRESENTATION	evolution-ML	representation
+REPRESENTATION	evolution-ML	latent
+REPRESENTATION	evolution-ML	foundation model
+REPRESENTATION	evolution-ML	encoder
+REPRESENTATION	evolution-ML	learned
+REPRESENTATION	systems-harness	gene regulatory network
+REPRESENTATION	systems-harness	grn
+REPRESENTATION	systems-harness	regulatory network
+REPRESENTATION	systems-harness	network model
+REPRESENTATION	systems-harness	circuit
+REPRESENTATION	systems-harness	topology
+REPRESENTATION	systems-harness	inference
+FEEDBACK	evolution-ML	generation
+FEEDBACK	evolution-ML	iterative
+FEEDBACK	evolution-ML	selection cycle
+FEEDBACK	evolution-ML	adaptation over
+FEEDBACK	evolution-ML	feedback
+FEEDBACK	evolution-ML	repeated
+FEEDBACK	systems-harness	signal
+FEEDBACK	systems-harness	stimulus
+FEEDBACK	systems-harness	environment
+FEEDBACK	systems-harness	induction
+FEEDBACK	systems-harness	condition
+FEEDBACK	systems-harness	exposure
+FEEDBACK	systems-harness	input
+FEEDBACK	systems-harness	feedback loop

@@ -1,0 +1,7 @@
+group,institution,side,why_phase1,bridge_score
+Faruck Morcos,UT Dallas,M4↔M2 — coevolutionary constraints for engineering repressors; fitness landscapes,Coevolution-driven design linking fitness landscape (M4) to regulatory-circuit engineering (M2-adjacent).,51
+Richard A. Watson,University of Southampton,BOTH sides — 'evolution learns to generalise' (M4) + 'learning principles of cellular networks' (M2),Same-author bridge: already frames evolution as learning AND cellular networks as learning. The single closest group to the M2↔M4 wiring.,18
+Adam Feist / Michael Jensen,Novo Nordisk Foundation Center (DTU),"M4 side — mechanistic + ML models of metabolic adaptation, enzyme promiscuity",Couples ML search with mechanistic (dynamical) models — the exact hybrid M4↔M2 needs. Strong metabolic-engineering wet-lab loop.,7
+Dana Pe'er,Memorial Sloan Kettering,M2 side — epigenetic plasticity + cell-cell interaction driving cell-fate transitions,Premier cell-fate / state-transition modeling group; the harness operator in its most data-rich form. Multiple couplings to search-side papers.,7
+Qing Nie / Madhav Mani,UC Irvine / Northwestern,"M2 side — dynamical-systems treatment of single-cell transitions (spliceJAC, transcriptome dynamics)",Formal dynamical-systems models of state transitions — directly supplies the H operator as a learnable object.,4
+José Onuchic,Rice (CTBP),M2 side — topological robustness of gene regulatory circuits,Physics-of-living-systems treatment of GRN state space; theory backbone for the harness operator.,2
