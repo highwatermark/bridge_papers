@@ -1,0 +1,19 @@
+{
+ "cislo_refs": 37,
+ "mustonen2009_refs": 59,
+ "mustonen2010_refs": 41,
+ "shared_refs": {
+  "2009": 0,
+  "2010": 0
+ },
+ "direct_citation": false,
+ "co_citing_papers": {
+  "2009": 0,
+  "2010": 0
+ },
+ "openalex_ids": {
+  "cislo2025": "W4416965924",
+  "mustonen2009": "W2009868245",
+  "mustonen2010": "W2021562946"
+ }
+}
